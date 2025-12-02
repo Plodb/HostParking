@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+  <script data-cookieconsent="ignore">
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('consent', 'default', {
+      'ad_personalization': 'denied',
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'analytics_storage': 'denied',
+      'functionality_storage': 'denied',
+      'personalization_storage': 'denied',
+      'security_storage': 'granted',
+      'wait_for_update': 500,
+    });
+    gtag("set", "ads_data_redaction", true);
+    gtag("set", "url_passthrough", false);
+  </script>
+  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="48fc90bf-2e4e-47d9-adc2-3bbf9bbc9e5a"
+    data-blockingmode="auto" type="text/javascript"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16807113216"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'AW-16807113216');
+  </script>
+  <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof (url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+        'send_to': 'AW-16807113216/6-zXCOXCpPYZEIDkoM4-',
+        'event_callback': callback
+      });
+      return false;
+    }
+  </script>
+
+  <script src="translation.js" defer></script>
+  <meta name="description" content="HostParking - Parkoviště Hostivice u letiště Praha">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HostParking</title>
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="64x64" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.13.18/jquery.timepicker.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css" />
+</head>
+
+<body>
+  <noscript>
+    <div id="no-js-popup" style="
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10000;
+    ">
+      <div style="
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        text-align: center;
+      ">
+        <p>Zdá se, že máte ve vašem zařízení vypnutý JavaScript. Pro správnou funkci webu jej prosím zapněte a obnovte
+          stránku.</p>
+      </div>
+    </div>
+  </noscript>
+  <div class="header-bg">
+    <header class="header">
+      <a href="/" class="nav-bar-logo"><img alt="HostParking" id="header-logo" src="assets/logo_1.png"></a>
+      <button id="menu-toggle" class="menu-toggle">&#9776;</button>
+      <div class="header-box" id="header-menu">
+        <a href="#prices-background" class="linkbox"><span>Ceny</span></a>
+        <a href="#video-container" id="instruction" class="linkbox"><span>Navod</span></a>
+        <a href="/blog/blog.html" class="linkbox"><span data-translate="instruction">Blog</span></a>
+        <a href="/info.html" class="linkbox"><span data-translate="prices">Info</span></a>
+        <a href="/services.html" class="linkbox"><span data-translate="reviews">Dop. služby</span></a>
+        <a href="https://parkinghub.cz" id="parkinghub" class="linkbox" target="_blank"
+          rel="noopener"><span>ParkingHub</span></a>
+        <a id="kontakty" class="linkbox"><span data-translate="contacts">Kontakty</span></a>
+        <select class="languageSelector" style="position: fixed; top: 10px; right: 10px; z-index: 1000;">
+        </select>
+      </div>
+      <button style="display: none;" id="pin">Pin</button>
+    </header>
+  </div>
+  <section class="calc-screen">
+    <div class="calc-div">
+      <div class="button-container">
+        <img src="/assets/logo_1.png" alt="Logo" id="main-logo">
+        <h1 id="mobile-header" data-translate="parking-at-prague-airport">Parkování u letiště Praha</h1>
+      </div>
+      <div class="flip-card-container">
+        <input id="formIdentifier" value="0" type="hidden">
+        <div class="flip-card" id="myFlipCard">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="valetFormFront">
+                <form id="valetForm">
+                  <div class="form-group" id="startDate-group">
+                    <label for="startDate">
+                      <span data-translate="from">Datum příjezdu</span><span style="color: red;">*</span>
+                    </label>
+                    <input type="text" readonly name="startDate" id="startDate" required value="" />
+                  </div>
+                  <div class="form-group" id="endDate-group">
+                    <label for="endDate">
+                      <span data-translate="to">Datum odjezdu</span><span style="color: red;">*</span>
+                    </label>
+                    <input type="text" readonly name="endDate" id="endDate" required value="" />
+                  </div>
+                  <div id="cena-dnu-wrapper">
+                    <div class="form-group" id="cena-group">
+                      <label for="finalPrice">
+                        <span data-translate="price">Cena</span>
+                      </label>
+                      <input type="text" readonly id="finalPrice" value="Vyberte datum." name="cena">
+                    </div>
+                    <div class="form-group" id="dnu-group">
+                      <label for="parkingPeriod">
+                        <span data-translate="parking-days">Dnu</span>
+                      </label>
+                      <input type="text" readonly id="parkingPeriod" name="Dnů">
+                    </div>
+                  </div>
+                  <div class="form-group" id="arriveTime-group">
+                    <label for="arriveTime">
+                      <span data-translate="arrival-time">Čas příjezdu</span><span style="color: red;">*</span>
+                    </label>
+                    <input type="text" id="arriveTime" name="arriveTime">
+                  </div>
+                  <div class="form-group" id="DepartureTime-group">
+                    <label for="DepartureTime">
+                      <span data-translate="departure-time">Čas odjezdu</span><span style="color: red;">*</span>
+                    </label>
+                    <input type="text" id="DepartureTime" name="DepartureTime">
+                  </div>
+                  <div class="form-group" id="telefon-group">
+                    <label for="telefon">
+                      <span data-translate="phone">Telefon</span><span style="color: red;">*</span>
+                    </label>
+                    <input type="text" id="telefon" required name="telefon" placeholder="420 123 456 789">
+                  </div>
+                  <div class="form-group" id="email-group">
+                    <label for="email">
+                      <span data-translate="email">Email</span><span style="color: red;">*</span>
+                    </label>
+                    <input type="email" id="email" name="email" placeholder="Vaš email" required>
+                  </div>
+                  <div class="form-group" id="jmeno-group">
+                    <label for="jmeno">
+                      <span data-translate="full-name">Jméno a příjmení</span><span style="color: red;">*</span>
+                    </label>
+                    <input type="text" id="jmeno" name="jmeno" placeholder="Jméno a příjmení" required>
+                  </div>
+                  <div class="form-group" id="model-group">
+                    <label for="model">
+                      <span data-translate="car-model">Model</span><span style="color: red;">*</span>
+                    </label>
+                    <input type="text" required id="model" name="model" placeholder="Model auta">
+                  </div>
+                  <div class="form-group" id="pas-count-group">
+                    <label for="pocetOsob">
+                      <span data-translate="number-of-people">Počet osob</span><span style="color: red;">*</span>
+                    </label>
+                    <input type="number" id="pas-count" name="pocetOsob" min="1" max="8" required>
+                  </div>
+                  <div class="next-button-container">
+                    <div class="form-group">
+                      <button type="button" id="next-button" class="next-button">
+                        <span data-translate="next">Další</span>
+                      </button>
+                    </div>
+                  </div>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <div class="valetForm">
+                <label class="checkbox-container" for="choice8">
+                  <input type="checkbox" class="choice" value="150" name="choice" id="choice8">
+                  <span data-translate="car-key-storage-free" class="label-text"
+                    value="Uložení autoklíčů v trezorů - 150 Kč (ZDARMA PŘI ČIŠTĚNÍ)">Uložení autoklíčů v trezorů - 150
+                    Kč
+                    (ZDARMA PŘI ČIŠTĚNÍ)</span>
+                </label>
+                <label class="checkbox-container" for="choice9">
+                  <input type="checkbox" class="choice" value="1200" name="choice" id="choice9">
+                  <span data-translate="interior-cleaning" class="label-text" value="Balík 1200 Standard "> Balík 1200
+                    Standard – Vysátí a vlhké čištění interiéru (bez mytí karoserie). 1200 Kč</span>
+                </label>
+                <label class="checkbox-container" for="choice17">
+                  <input type="checkbox" class="choice" value="2000" name="choice" id="choice17">
+                  <span data-translate="pet-cleaning" class="label-text" value="Balík 2000 Komplex">Balík 2000 Komplex –
+                    Standard + mytí karoserie, kol, ošetření pneumatik, úklid zavazadlového prostoru. 2000 Kč</span>
+                </label>
+                <label class="checkbox-container" for="choice11">
+                  <input type="checkbox" class="choice" value="4000" name="choice" id="choice11">
+                  <span data-translate="deep-seat-cleaning" class="label-text" value="Balík 4000 Exclusive ">Balík 4000
+                    Exclusive – Mytí karoserie + hloubkové čištění interiéru (sedadla, plasty, podlaha). 4000 Kč</span>
+                </label>
+                <label class="checkbox-container" for="choice10">
+                  <input type="checkbox" class="choice" value="500" name="choice" id="choice10">
+                  <span data-translate="pet-cleaning-surcharge" class="label-text"
+                    value="Příplatek za čištění vozidla po zvířatech">Příplatek za čištění vozidla po zvířatech +500
+                    Kč.</span>
+                </label>
+                <label class="checkbox-container" for="choice13">
+                  <input type="checkbox" class="choice" value="300" name="choice" id="choice13">
+                  <span data-translate="suv-cleaning-surcharge" class="label-text"
+                    value="Za čištění SUV nebo velké MPV příplatek 300 Kč k ceně čištění">Za čištění SUV nebo velké MPV
+                    příplatek
+                    300 Kč k ceně čištění</span>
+                </label>
+                <label class="checkbox-container" for="vop">
+                  <input type="checkbox" name="vop" required id="vop">
+                  <span if="vopLink" class="label-text" style="color: red;"
+                    data-translate="agree-to-processing">Souhlasím
+                    se zpracováním osobních údajů a
+                    <a style="color: red;">VOP*</a></span>
+                </label>
+                <div class="form-finish">
+                  <div class="finalPrice2-container">
+                    <label for="finalPrice2">
+                      <span data-translate="total-price">Celkova cena:</span>
+                    </label>
+                    <input type="text" readonly id="finalPrice2" value="Vyberte datum. " name="cena">
+                  </div>
+                  <div class="back-send-button-container">
+                    <button type="button" id="back-button" class="next-button">
+                      <span data-translate="back">Zpět</span>
+                    </button>
+                    <input id="o-nas" type="submit" id="send" class="next-button" value="Odeslat">
+                  </div>
+                </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="prices-background" class="prices-background">
+    <div class="price-table-box">
+      <div class="price-table-content">
+        <h1 style="margin-bottom: 2.5%; color:#8e2fca;" class="price-table-header"><span
+            data-translate="how-much-does">Kolik stojí
+            parkovaní auta?</span></h1>
+        <div class="table-button-wrapper">
+          <div style="display: none; position: absolute;  " id="monthName" class="month-name"></div>
+          <div class="month-buttons">
+            <div class="month-button-container">
+              <button id="priceButton1m"><span data-translate="january">Leden</span></button>
+              <button id="priceButton2m"><span data-translate="february">Únor</span></button>
+              <button id="priceButton3m"><span data-translate="march">Březen</span></button>
+              <button id="priceButton4m"><span data-translate="april">Duben</span></button>
+              <button id="priceButton5m"><span data-translate="may">Květen</span></button>
+              <button id="priceButton6m"><span data-translate="june">Červen</span></button>
+              <button id="priceButton7m"><span data-translate="july">Červenec</span></button>
+              <button id="priceButton8m"><span data-translate="august">Srpen</span></button>
+              <button id="priceButton9m"><span data-translate="september">Září</span></button>
+              <button id="priceButton10m"><span data-translate="october">Říjen</span></button>
+              <button id="priceButton11m"><span data-translate="november">Listopad</span></button>
+              <button id="priceButton12m"><span data-translate="december">Prosinec</span></button>
+            </div>
+          </div>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th><span data-translate="day">Den</span></th>
+                  <th><span data-translate="price">Cena</span></th>
+                </tr>
+              </thead>
+              <tbody class="pricesTableBody" id="pricesTableBody">
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+  <section id="photo-desc-container">
+    <div class="desc-header">
+      <p><span data-translate="parking-description-1">HostParking – parkování pro vaše auto, které se nachází přibližně
+          8
+          minut jízdy od letiště Václava Havla, což z
+          něj činí ideální volbu pro cestovatele hledající nejlevnější parkování u letiště Praha.</span></p>
+    </div>
+    <div class="photo-desc-content">
+      <div class="description-container">
+        <p><span data-translate="parking-description-2">Cena parkování zahrnuje také transfer na letiště a zpět
+            pohodlnými
+            vozy s prostorným zavazadlovým prostorem,
+            kam se vejde veškerá vaše zavazadla, včetně jízdních kol, snowboardů, lyží a dalších objemných předmětů.
+            Služba je k dispozici <strong>24 hodin denně</strong>, takže ji můžete využít kdykoliv, bez ohledu na čas
+            vašeho letu.</span></p>
+        <p><span data-translate="parking-description-3">Jedním z našich priorit je <strong>nejlevnější parkování u
+              letiště</strong> spojené s vysokou kvalitou
+            služeb. Nabízíme jak krátkodobé, tak dlouhodobé parkování automobilů <strong>u letiště Praha</strong>. Kromě
+            toho můžete využít další služby, jako je například nastartování vozidla při vybití baterie, čištění
+            automobilu, doplnění klimatizace nebo úschova klíčů po dobu vaší cesty.</span></p>
+      </div>
+      <div class="photo-container">
+        <div class="carousel-container">
+          <div class="carousel-track">
+            <img src="/assets/img0.webp" alt="photo" class="carousel-image" loading="lazy">
+            <img src="/assets/img1.webp" alt="photo" class="carousel-image" loading="lazy">
+            <img src="/assets/img2.webp" alt="photo" class="carousel-image" loading="lazy">
+            <img src="/assets/img3.webp" alt="photo" class="carousel-image" loading="lazy">
+            <img src="/assets/img4.webp" alt="photo" class="carousel-image" loading="lazy">
+            <img src="/assets/img5.webp" alt="photo" class="carousel-image" loading="lazy">
+            <img src="/assets/img6.webp" alt="photo" class="carousel-image" loading="lazy">
+            <img src="/assets/img7.webp" alt="photo" class="carousel-image" loading="lazy">
+            <img src="/assets/img8.webp" alt="photo" class="carousel-image" loading="lazy">
+            <img src="/assets/img9.webp" alt="photo" class="carousel-image" loading="lazy">
+          </div>
+          <button class="carousel-prev">&lt;</button>
+          <button class="carousel-next">&gt;</button>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <section id="video-container" class=" video-container">
+    <h2><span data-translate="how-to-get">Jak se dostat na parkoviště?</span></h2>
+    <p>
+    <p><span data-translate="video-instruction">Zde naleznete videa, která vám pomohou snadno najít cestu k našemu
+        parkovišti. Sledujte videa a přesvědčte se,
+        jak snadné je k nám dojet. A níže najdete mapu s přesnou polohou našeho parkoviště.</span></p>
+    </p>
+    <div class="videos">
+      <div class="video-wrapper">
+        <h3><span data-translate="entrance-1">Vchod 1</span></h3>
+        <iframe height="100%" src="https://www.youtube.com/embed/Peo-2O-C6tk" credentialless
+          title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="video-wrapper">
+        <h3><span data-translate="entrance-2">Vchod 2</span></h3>
+        <iframe height="100%" src="https://www.youtube.com/embed/9I-d9C0IFxM" credentialless
+          title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+  <section id="kontakt" class="contact-section">
+    <div class="contact-list">
+      <h1 class="contact-title"><span data-translate="contacts">Kontakty</span></h1>
+      <div class="contact-info">
+        <p><span data-translate="phone-number">Telefon +420 704 827 317</span>
+      </div>
+      <div class="contact-info">
+        <p><span data-translate="email-address"> email rezervace@hostparking.cz</span>
+      </div>
+      <div class="contact-box-adress"> <span data-translate="find-us">najdete nás na adrese:</span> HOST PARKING -
+        Hostivice, 25301, 50.078766, 14.283759</p>
+      </div>
+    </div>
+  </section>
+  <div class="map-container" id="pattern">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2373.7091435743287!2d14.281165776301087!3d50.078696871523455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNTDCsDA0JzQzLjMiTiAxNMKwMTcnMDEuNSJF!5e1!3m2!1sen!2scz!4v1734180611313!5m2!1sen!2scz"
+      width=100% height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+  <footer>
+    <div class="footer-content">
+      <p class="copyright"><span data-translate="copyright">Copyright © 2024 HostParking</span></p>
+      <img id="footer-logo" width="10rem" height="auto" alt="footer-logo" src="/assets/logo_1.png">
+      <nav class="footer-nav">
+        <a class="footer-link" href="/oou.html"><span data-translate="privacy-policy">Ochrana osobních údajů</span></a>
+        <a class="footer-link" href="/vop.pdf"><span data-translate="terms-and-conditions">VOP</span></a>
+        <a class="footer-link" id="kontakty-footer" href="#kontakty"><span data-translate="contact">Kontakt</span></a>
+      </nav>
+    </div>
+  </footer>
+  <div class="contact-background" id="contact-background">
+    <div class="contact-grid">
+      <div class="infolink-box">
+        <a href="#" id="close"></a>
+        <h2 class="infolink-title"><span data-translate="contact-form">Kontaktní formulář</span><span
+            data-translate="infoline"></span></h2>
+      </div>
+      <div class="contact-us-box">
+        <form id="contact-form">
+          <input type="text" id="contact-form-name" placeholder="Jméno" required>
+          <input type="email" id="contact-form-email" placeholder="Email" required>
+          <textarea maxlength="300" maxrows="12" cols="60" wrap="hard" oninput="auto_grow(this)"
+            id="contact-form-message" placeholder="Zpráva" required></textarea>
+          <button type="submit" id="contact-form-submit"
+            class="submit-button"><span><span>Odeslat</span></span></button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.12/pdfmake.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.12/vfs_fonts.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.13.18/jquery.timepicker.min.js"></script>
+  <script defer src="/script.js"></script>
+  <script defer src="/contactEmail.js"></script>
+</body>
+
+</html>

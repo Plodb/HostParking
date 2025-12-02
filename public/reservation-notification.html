@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oznámení o rezervaci</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      max-width: 600px;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    h1 {
+      color: #4CAF50;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    .action-text {
+      font-weight: bold;
+      color: #007bff;
+    }
+    .footer {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Oznámení o rezervaci</h1>
+        <p class="action-text">{{actionText}}</p>
+        <p>Děkujeme, že využíváte naše služby. Pokud máte jakékoliv dotazy, neváhejte nás kontaktovat.</p>
+        <button id="printPdfBtn" style="margin: 20px 0; padding: 10px 24px; background: #314d9d; color: #fff; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">
+          Tisknout PDF
+        </button>
+        <div class="footer">
+          &copy; 2025 HostParking. Všechna práva vyhrazena.
+        </div>
+      </div>
+      <script>
+  var pdfUrl = "{{pdfUrl}}";
+  function openAndPrintPdf() {
+    if (pdfUrl && pdfUrl !== "{{pdfUrl}}") {
+      window.location.href = pdfUrl;
+    } else {
+      alert('PDF není k dispozici.');
+    }
+  }
+
+  document.getElementById('printPdfBtn').addEventListener('click', openAndPrintPdf);
+  if (pdfUrl && pdfUrl !== "{{pdfUrl}}") {
+    setTimeout(openAndPrintPdf, 2000); // 2 seconds delay
+  } else {
+    setTimeout(function() {
+      window.close();
+    }, 5000); // 5 seconds delay
+  }
+      </script>
+</body>
+</html>

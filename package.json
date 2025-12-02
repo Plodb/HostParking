@@ -1,0 +1,38 @@
+{
+  "name": "hostparking-vue",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview",
+    "twinit": "tailwindcss init -p",
+    "server": "node server.cjs"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^5.2.6",
+    "flatpickr": "^4.6.13",
+    "googleapis": "^157.0.0",
+    "nodemailer": "^7.0.5",
+    "papaparse": "^5.5.3",
+    "pdfmake": "^0.2.20",
+    "vue": "^3.5.18",
+    "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.12",
+    "@vitejs/plugin-legacy": "^7.2.1",
+    "@vitejs/plugin-vue": "^6.0.1",
+    "@vue/tsconfig": "^0.7.0",
+    "autoprefixer": "^10.4.21",
+    "critters": "^0.0.23",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.12",
+    "terser": "^5.43.1",
+    "typescript": "~5.8.3",
+    "vite": "^7.1.2",
+    "vite-plugin-compression": "^0.5.1",
+    "vite-plugin-imagemin": "^0.6.1",
+    "vue-tsc": "^3.0.5"
+  }
+}

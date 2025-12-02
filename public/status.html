@@ -1,0 +1,154 @@
+1<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stav rezervace</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 24px 24px 32px 24px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    h1 {
+      text-align: center;
+      color: #4CAF50;
+      margin-bottom: 16px;
+    }
+    .status-info {
+      margin-top: 10px;
+      padding: 16px;
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      background: #f9f9f9;
+    }
+    .status-info p {
+      margin: 8px 0;
+      font-size: 16px;
+    }
+    .status-info strong {
+      color: #4CAF50;
+    }
+    .status-history {
+      margin-top: 32px;
+      background: #f6f8fa;
+      border-radius: 6px;
+      padding: 16px;
+      border: 1px solid #e0e0e0;
+    }
+    .status-history h2 {
+      margin-top: 0;
+      font-size: 20px;
+      color: #314d9d;
+    }
+    .status-history ul {
+      padding-left: 20px;
+      margin: 0;
+    }
+    .pdf-buttons {
+      margin-top: 32px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    .pdf-btn {
+      padding: 10px 20px;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      display: inline-block;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.2s;
+    }
+    .pdf-btn.download-original { background-color: #314d9d; }
+    .pdf-btn.download-redirected { background-color: #ff9800; }
+    .pdf-btn.print { background-color: #4CAF50; }
+    .pdf-btn:hover { opacity: 0.9; }
+    @media (max-width: 600px) {
+      .container { padding: 10px; }
+      .pdf-buttons { flex-direction: column; gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Stav rezervace</h1>
+    <div class="status-info">
+      <p><strong>Jméno:</strong> {{reservationName}}</p>
+      <p><strong>Časové období:</strong> {{reservationDateRange}}</p>
+      <p><strong>Stav:</strong> {{reservationStatus}}</p>
+    </div>
+    <div class="status-history">
+      <h2>Historie změn stavu</h2>
+      <ul>
+        {{statusHistory}}
+      </ul>
+    </div>
+    <div class="pdf-buttons">
+      {{pdfButtons}}
+    </div>
+  </div>
+  <script>
+
+    document.getElementById('printPdfBtn').addEventListener('click', function() {
+      var redirectedBtn = document.querySelector('.pdf-btn.download-redirected');
+      var originalBtn = document.querySelector('.pdf-btn.download-original');
+      var pdfUrl = redirectedBtn ? redirectedBtn.getAttribute('href') : (originalBtn ? originalBtn.getAttribute('href') : null);
+      if (pdfUrl) {
+        var win = window.open(pdfUrl, '_blank');
+        if (win) {
+          win.onload = function() { win.print(); };
+        }
+      }
+    });
+  </script>
+<script>
+    const statusTranslations = {
+      'created': 'vytvořeno',
+      'pending': 'čeká na schválení',
+      'accepted': 'přijato',
+      'accepted-to-prg': 'přijato na PRG',
+      'accepted-to-fix': 'přijato na Fix',
+      'redirected-to-prg': 'přesměrováno na PRG',
+      'redirected-to-fix': 'přesměrováno na Fix',
+      'canceled': 'zrušeno',
+    };
+  
+    // Translate main status
+    const statusInfo = document.querySelector('.status-info p:nth-child(3)');
+    if (statusInfo) {
+      const match = statusInfo.textContent.match(/Stav:\s*(.*)/);
+      if (match) {
+        const originalStatus = match[1].trim();
+        const translated = statusTranslations[originalStatus] || originalStatus;
+        statusInfo.innerHTML = `<strong>Stav:</strong> ${translated}`;
+      }
+    }
+  
+    // Translate status history entries
+    document.querySelectorAll('.status-history ul li').forEach(function(li) {
+      const parts = li.textContent.split(' - ');
+      if (parts.length > 1) {
+        const originalStatus = parts[0].trim();
+        const translated = statusTranslations[originalStatus] || originalStatus;
+        li.innerHTML = `<span>${translated}</span> - <span>${parts.slice(1).join(' - ')}</span>`;
+      }
+    });
+  </script>
+</body>
+</html>

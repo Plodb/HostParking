@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16807113216"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'AW-16807113216');
+
+        if (sessionStorage.getItem('reservationSubmitted') === 'true') {
+            sessionStorage.removeItem('reservationSubmitted');
+        }
+
+        function gtag_report_conversion(url) {
+            var callback = function () {
+                if (typeof (url) != 'undefined') {
+                    window.location = url;
+                }
+            };
+            gtag('event', 'conversion', {
+                'send_to': 'AW-16807113216/6-zXCOXCpPYZEIDkoM4-',
+                'event_callback': callback
+            });
+            return false;
+        }
+    </script>
+    <title>HostParking - Děkujeme za rezervaci!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="3; URL='/'" />
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="icon" type="image/x-icon" href="/assets/logo_1.png">
+</head>
+
+<style>
+    body {
+        font-family: "Roboto Slab";
+        padding-top: 30vh;
+        color: black;
+        font-size: 3vh;
+        text-align: center;
+        background-color: #Ffe785;
+    }
+</style>
+
+<body>
+    <h1>Děkujeme!</h1>
+    <p>Vaše objednavka byla úspěšně odeslána.</p>
+
+</body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+
+
+</html>

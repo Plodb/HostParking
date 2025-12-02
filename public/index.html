@@ -1,0 +1,1484 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+
+  <script data-cookieconsent="ignore">
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('consent', 'default', {
+      'ad_personalization': 'denied',
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'analytics_storage': 'denied',
+      'functionality_storage': 'denied',
+      'personalization_storage': 'denied',
+      'security_storage': 'granted',
+      'wait_for_update': 500,
+    });
+    gtag("set", "ads_data_redaction", true);
+    gtag("set", "url_passthrough", false);
+  </script>
+  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="48fc90bf-2e4e-47d9-adc2-3bbf9bbc9e5a"
+    data-blockingmode="auto" type="text/javascript"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16807113216"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'AW-16807113216');
+  </script>
+  <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof (url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+        'send_to': 'AW-16807113216/6-zXCOXCpPYZEIDkoM4-',
+        'event_callback': callback
+      });
+      return false;
+    }
+  </script>
+
+  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Levné parkování u letiště Václava Havla v Praze. Jak funguje HostParking – Jednoduchý návod pro zákazníky. Rezervujte online na HostParking.cz.">
+  <meta name="keywords" content="HostParking, fixparking, prgparking, parkinghub, levné dlouhodobé parkování, výhodné parkování letiště Praha, non stop parkování letiště,  levné parkování letiště Praha, parkoviště letiště Praha, nejlevnější parkování letiště Praha, parkování u letiště Praha, parkování letiště Praha, Levné parkování u letiště Václava Havla, parkování u letiště Praha, levné parkování letiště Praha, levné parkování Praha letiště, letiště Václava Havla parking, transfer na letiště Praha, parkoviště u letiště Praha, dlouhodobé parkování Praha, rezervace parkování online">
+  <title>HostParking | Parkování u letiště Praha</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="apple-icon.webp">
+  <link rel="canonical" href="https://hostparking.cz" />
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.13.18/jquery.timepicker.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css" />
+  <style>
+    :root {
+      --primary: #6a0dad;
+      --accent: #ffcc00;
+      --text: #1a1a1a;
+      --bg: #f5f5ff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    header {
+      background-color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      position: fixed;
+      z-index: 100;
+      top: 0;
+      left: 0;
+      right: 0;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      color: var(--primary);
+    }
+
+    nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      height: 125vh;
+      min-height: 600px;
+      width: 100%;
+
+      background-image: url('./main.png');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: scroll;
+      background-color: #000;
+
+      position: relative;
+      text-align: center;
+      padding: 2rem;
+      color: white;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.4);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      width: 100%;
+      padding: 1rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .hero h2 {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: clamp(1rem, 2vw, 1.4rem);
+    }
+
+    @media (min-width: 768px) {
+      .hero-content { max-width: 700px; }
+    }
+
+    .hero h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+    .hero p { font-size: 1.2rem; }
+
+    .date-range-box {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+      padding: 1.5rem;
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      max-width: 90%;
+      animation: fadeUp 1s ease-out forwards;
+      opacity: 0;
+      transform: translateY(30px);
+      margin: auto;
+    }
+    .date-range-box .form-group label {
+      color: var(--text);
+    }
+
+    @media (min-width: 768px) {
+      .date-range-box { max-width: 700px; }
+    }
+
+    #startDateBox,
+    #endDateBox {
+      padding: 0.8rem 1rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      min-width: 200px;
+    }
+
+    .date-range-box .apply-button {
+      padding: 0.8rem 1.5rem;
+      background-color: #8000c9;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s ease;
+      align-self: end;
+    }
+
+    .date-range-box button:hover { background-color: #5e019d; }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .menu-toggle {
+        display: none;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 1rem;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        z-index: 999;
+    }
+
+    nav a {
+        margin: 0.5rem 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav.active {
+         display: flex;
+        }
+    }
+
+
+    .info-block {
+      background: linear-gradient(145deg, #ffffff, #f3f0ff);
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      padding: 1.5rem;
+      border-radius: 16px;
+      width: fit-content;
+      font-size: 1.1rem;
+      max-width: 95%;
+      margin: 3rem auto;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(106, 13, 173, 0.1);
+    }
+
+
+
+    .steps {
+      padding: 4rem 2rem;
+      background-color: #fff;
+      text-align: center;
+    }
+
+    .steps h3 { font-size: 2rem; margin-bottom: 2rem; }
+
+    .step-icons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      padding: 1rem;
+    }
+
+    .step {
+      flex: 1 1 150px;
+      max-width: 220px;
+      padding: 1rem;
+      background: #fff;
+      border-radius: 12px;
+      transition: transform 0.3s ease;
+      animation: fadeUp 0.8s ease-out both;
+    }
+
+    .step:hover { transform: translateY(-10px); }
+
+    .step img {
+      width: 3.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .step p {
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+
+    @keyframes highlightStep {
+    0% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 transparent;
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(106, 13, 173, 0.5);
+      opacity: 1;
+    }
+    }
+
+    .step {
+      opacity: 0;
+      transform: scale(0.95);
+      transition: all 0.5s ease;
+    }
+
+    .step.visible {
+        animation: highlightStep 0.6s ease forwards;
+      }
+
+    .step.visible:nth-child(1) {
+        animation-delay: 0.3s;
+      }
+      .step.visible:nth-child(2) {
+        animation-delay: 0.6s;
+      }
+      .step.visible:nth-child(3) {
+        animation-delay: 0.9s;
+      }
+      .step.visible:nth-child(4) {
+        animation-delay: 1.2s;
+      }
+      .step.visible:nth-child(5) {
+        animation-delay: 1.5s;
+      }
+      .step.visible:nth-child(6) {
+        animation-delay: 1.8s;
+      }
+      .step.visible:nth-child(7) {
+        animation-delay: 2.1s;
+      }
+
+      .block-price {
+        position: relative;
+        padding: 4rem 2rem;
+        text-align: center;
+        background-image: url('./block-price.webp');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow: hidden;
+      }
+
+      .block-price::after {
+        content: "";
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%;
+        height: 100%;
+        background: hsla(298, 26%, 48%, 0.1); 
+        backdrop-filter: blur(2px);  
+        z-index: 0;
+      }
+
+      .block-price .info-block {
+        position: relative;
+        z-index: 1;
+      }
+
+
+    .prices {
+      background: #fff;
+      padding: 4rem 2rem;
+      text-align: center;
+      align-items: center;
+  display: flex;
+  flex-direction: column; 
+    }
+
+    .prices h3 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: var(--primary);
+    }
+
+    .price-table {
+      max-width: 600px;
+      margin: 0 auto;
+      border-collapse: collapse;
+      width: 100%;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    .price-table th, .price-table td {
+      padding: 1rem;
+      border-bottom: 1px solid #eee;
+    }
+
+    .price-table th {
+      background: var(--accent);
+      color: #000;
+      font-weight: bold;
+    }
+
+
+    .gallery {
+      position: relative;
+      padding: 4rem 2rem;
+      text-align: center;
+      background-image: url('./gallery-back.webp');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      overflow: hidden;
+    }
+
+    .gallery::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: hsla(298, 26%, 48%, 0.1); 
+      backdrop-filter: blur(3px);
+      z-index: 0;
+    }
+
+    .gallery h3 { font-size: 2rem; margin-bottom: 2rem; }
+
+    .gallery img {
+      width: 100%;
+      max-width: 900px;
+      margin: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .gallery .slider {
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 2rem;
+      border-radius: 16px;
+      max-width: 1300px;
+      margin: 0 auto;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      position: relative;
+      z-index: 1;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2.5rem;
+      color: white;
+      background: rgba(0,0,0,0.5);
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      z-index: 10;
+      border-radius: 8px;
+      user-select: none;
+    }
+    .arrow.left { left: 10px; }
+    .arrow.right { right: 10px; }
+
+
+    @media (max-width: 600px) {
+    .arrow {
+        font-size: 1.8rem;
+        padding: 0.3rem 0.6rem;
+      }
+    }
+
+
+
+    .slider {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.6s ease-in-out;
+      will-change: transform;
+    }
+
+
+    .slides a {
+      flex-shrink: 0;
+      width: 100%;
+    }
+
+    .slides img {
+      width: 100%;
+      height: auto;
+      cursor: pointer;
+      flex-shrink: 0;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .slides img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    .slides .slide {
+      flex-shrink: 0;
+      width: 100%;
+      padding: 1rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .slides .slide img {
+      width: 100%;
+      border-radius: 10px;
+      object-fit: cover;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .slides .slide:hover {
+      transform: scale(1.02);
+    }
+
+    .slides .slide:hover img {
+      box-shadow: 0 10px 30px rgba(106, 13, 173, 0.4); 
+    }
+    
+
+    .blog-section {
+      background: white;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .blog-section h3 {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 2rem;
+    }
+
+    .blog-slider {
+      overflow: hidden;
+      max-width: 1000px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .blog-slides {
+      display: flex;
+      transition: transform 0.6s ease-in-out;
+    }
+
+    .blog-card {
+      background: #f9f9ff;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      flex-shrink: 0;
+      width: 100%;
+      max-width: 300px;
+      margin: 0 1rem;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .blog-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .blog-content {
+      padding: 1rem;
+      text-align: left;
+    }
+
+    .blog-content h4 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+
+    .blog-content p {
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+      color: #555;
+    }
+
+    .blog-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .blog-link:hover {
+      text-decoration: underline;
+    }
+
+    .video-section {
+      background: linear-gradient(to bottom, #f5f5ff 0%, #ffffff 100%);
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .video-section h3 {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 2rem;
+    }
+
+    .video-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .video-box {
+      flex: 1 1 400px;
+      max-width: 480px;
+      background: #f5f5ff;
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+
+    .video-box iframe {
+      width: 100%;
+      height: 270px;
+      border-radius: 8px;
+    }
+
+    .video-box p {
+      margin-top: 1rem;
+      color: #444;
+      font-size: 1rem;
+    }
+
+    .video-box {
+      transition: all 0.3s ease;
+    }
+
+    .video-box:hover {
+      box-shadow: 0 10px 30px rgba(106, 13, 173, 0.3);
+      transform: scale(1.02);
+    }
+
+
+    @media (max-width: 768px) {
+      .video-section {
+        padding: 2rem 1rem;
+      }
+
+      .video-box p {
+        font-size: 0.95rem;
+      }
+    }
+
+
+
+    .map {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .map iframe {
+      width: 100%;
+      max-width: 1000px;
+      height: 400px;
+      border: none;
+      border-radius: 8px;
+    }
+
+
+      .partner-slider {
+  overflow: hidden;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.partner-track {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+  will-change: transform;
+}
+
+.partner {
+  flex: 0 0 auto;
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  box-sizing: border-box;
+}
+
+.partner img {
+  max-height: 70px;
+  margin-bottom: 0.5rem;
+}
+
+.partner p {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+}
+
+
+    footer {
+      background: #1a1a1a;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+  </style>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "HostParking",
+      "url": "https://hostparking.cz",
+      "image": "https://hostparking.cz/assets/parkoviste-hostivice.webp",
+      "logo": "https://hostparking.cz/IMG-20241214-WA0008.webp",
+      "description": "Levné parkování u letiště Václava Havla v Praze s nonstop transferem.",
+      "telephone": "+420704827317",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "do Blatin 373",
+        "addressLocality": "Hostivice",
+        "postalCode": "253 01",
+        "addressCountry": "CZ"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 50.0786894,
+        "longitude": 14.283733
+      },
+      "openingHours": "Mo-Su 00:00-23:59",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Praha"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Parkovací služby",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Parkování u letiště Václava Havla",
+              "description": "Dlouhodobé i krátkodobé parkování u letiště s transferem."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Transfer na letiště a zpět",
+              "description": "Transfer až k terminálu 1 a zpět k vozu v ceně služby."
+            }
+          }
+        ]
+      }
+    }
+  </script>
+
+
+</head>
+
+  <div id="contactPopup" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%);
+  background:white; padding:2rem; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.3); z-index:9999; max-width: 400px; width: 90%;">
+    <h3 style="margin-bottom: 1rem; color: var(--primary);">Máte dotaz?</h3>
+    <form>
+      <input type="text" name="name" placeholder="Vaše jméno" required style="width:100%; margin-bottom:1rem; padding:0.6rem; border-radius:8px; border:1px solid #ccc;">
+      <input type="email" name="email" placeholder="Váš email" required style="width:100%; margin-bottom:1rem; padding:0.6rem; border-radius:8px; border:1px solid #ccc;">
+      <textarea name="message" placeholder="Vaše zpráva" required style="width:100%; padding:0.6rem; border-radius:8px; border:1px solid #ccc; height:100px;"></textarea>
+      <button type="submit" style="margin-top:1rem; padding:0.7rem 1.5rem; background:var(--primary); color:white; border:none; border-radius:8px; cursor:pointer;">Odeslat</button>
+      <button type="button" onclick="closeContactPopup()" style="margin-top:1rem; margin-left:1rem; background:transparent; border:none; color:#666; cursor:pointer;">Zavřít</button>
+    </form>
+  </div>
+
+  <script>
+    function openContactPopup() {
+      document.getElementById('contactPopup').style.display = 'block';
+    }
+
+    function closeContactPopup() {
+      document.getElementById('contactPopup').style.display = 'none';
+    }
+  </script>
+
+
+<body>
+
+
+ <header>
+    <div class="header-container">
+        <h1>
+          <a href="https://hostparking.cz" style="text-decoration: none; color: inherit;">
+            HOST<span style="color:var(--accent);">PARKING</span>
+          </a>
+        </h1>
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <nav id="menu">
+          <a href="/Naplnění autoklimatizace – Pohodlí během vaší dovolené.html" id="klimatizace">Klimatizace</a>
+          <a href="/Profesionální čištění vozidel u letiště Praha.html" id="services">Doplňkový služby</a>
+        <a href="#blog">Užitečné informace</a>
+        <a href="/Jak-funguje-HostParking.html">Jak to funguje</a>
+        <a href="#prices">Ceník</a>
+        <a href="#contact" id="kontakty">Kontakt</a>
+        </nav>
+    </div>
+  </header>
+
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Levné parkování u letiště Václava Havla v Praze</h1>
+      <h2>Parkování u letiště Praha</h2>
+      <p style="padding-bottom: 1rem;">Rezervujte online na HostParking.cz</p>
+      <div class="date-range-box">
+        <div class="form-group">
+          <label for="startDateBox">Datum příjezdu</label>
+          <input type="text" id="startDateBox" readonly placeholder="Vyberte datum">
+        </div>
+        <div class="form-group">
+          <label for="endDateBox">Datum odjezdu</label>
+          <input type="text" id="endDateBox" readonly placeholder="Vyberte datum">
+        </div>
+        <button id="applyDateRange" class="apply-button">Použít</button>
+      </div>
+      <div class="calc-div" style="display: none;">
+        <div class="flip-card-container">
+          <input id="formIdentifier" value="0" type="hidden">
+          <div class="flip-card" id="myFlipCard">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="valetFormFront">
+                  <form id="valetForm">
+                    <div class="form-group" id="startDate-group">
+                      <label for="startDate">
+                        <span data-translate="from">Datum příjezdu</span><span style="color: red;">*</span>
+                      </label>
+                      <input type="text" readonly name="startDate" id="startDate" required value="" />
+                    </div>
+                    <div class="form-group" id="endDate-group">
+                      <label for="endDate">
+                        <span data-translate="to">Datum odjezdu</span><span style="color: red;">*</span>
+                      </label>
+                      <input type="text" readonly name="endDate" id="endDate" required value="" />
+                    </div>
+                    <div id="cena-dnu-wrapper">
+                      <div class="form-group" id="cena-group">
+                        <label for="finalPrice">
+                          <span data-translate="price">Cena</span>
+                        </label>
+                        <input type="text" readonly id="finalPrice" value="Vyberte datum." name="cena">
+                      </div>
+                      <div class="form-group" id="dnu-group">
+                        <label for="parkingPeriod">
+                          <span data-translate="parking-days">Dnu</span>
+                        </label>
+                        <input type="text" readonly id="parkingPeriod" name="Dnů">
+                      </div>
+                    </div>
+                    <div class="form-group" id="arriveTime-group">
+                      <label for="arriveTime">
+                        <span data-translate="arrival-time">Čas příjezdu</span><span style="color: red;">*</span>
+                      </label>
+                      <input type="text" id="arriveTime" name="arriveTime">
+                    </div>
+                    <div class="form-group" id="DepartureTime-group">
+                      <label for="DepartureTime">
+                        <span data-translate="departure-time">Čas odjezdu</span><span style="color: red;">*</span>
+                      </label>
+                      <input type="text" id="DepartureTime" name="DepartureTime">
+                    </div>
+                    <div class="form-group" id="telefon-group">
+                      <label for="telefon">
+                        <span data-translate="phone">Telefon</span><span style="color: red;">*</span>
+                      </label>
+                      <input type="text" id="telefon" required name="telefon" placeholder="420 123 456 789">
+                    </div>
+                    <div class="form-group" id="email-group">
+                      <label for="email">
+                        <span data-translate="email">Email</span><span style="color: red;">*</span>
+                      </label>
+                      <input type="email" id="email" name="email" placeholder="Vaš email" required>
+                    </div>
+                    <div class="form-group" id="jmeno-group">
+                      <label for="jmeno">
+                        <span data-translate="full-name">Jméno a příjmení</span><span style="color: red;">*</span>
+                      </label>
+                      <input type="text" id="jmeno" name="jmeno" placeholder="Jméno a příjmení" required>
+                    </div>
+                    <div class="form-group" id="model-group">
+                      <label for="model">
+                        <span data-translate="car-model">Model</span><span style="color: red;">*</span>
+                      </label>
+                      <input type="text" required id="model" name="model" placeholder="Model auta">
+                    </div>
+                    <div class="form-group" id="pas-count-group">
+                      <label for="pocetOsob">
+                        <span data-translate="number-of-people">Počet osob</span><span style="color: red;">*</span>
+                      </label>
+                      <input type="number" id="pas-count" name="pocetOsob" min="1" max="8" required>
+                    </div>
+                    <div class="next-button-container">
+                      <div class="form-group">
+                        <button type="button" id="next-button" class="next-button">
+                          <span data-translate="next">Další</span>
+                        </button>
+                      </div>
+                    </div>
+                </div>
+              </div>
+              <div class="flip-card-back">
+                <div class="valetForm">
+                  <label class="checkbox-container" for="choice8">
+                    <input type="checkbox" class="choice" value="150" name="choice" id="choice8">
+                    <span data-translate="car-key-storage-free" class="label-text"
+                      value="Uložení autoklíčů v trezorů - 150 Kč (ZDARMA PŘI ČIŠTĚNÍ)">Uložení autoklíčů v trezorů - 150
+                      Kč
+                      (ZDARMA PŘI ČIŠTĚNÍ)</span>
+                  </label>
+                  <label class="checkbox-container" for="choice9">
+                    <input type="checkbox" class="choice" value="1200" name="choice" id="choice9">
+                    <span data-translate="interior-cleaning" class="label-text" value="Balík 1200 Standard "> Balík 1200
+                      Standard – Vysátí a vlhké čištění interiéru (bez mytí karoserie). 1200 Kč</span>
+                  </label>
+                  <label class="checkbox-container" for="choice17">
+                    <input type="checkbox" class="choice" value="1500" name="choice" id="choice17">
+                    <span data-translate="pet-cleaning" class="label-text" value="ruční čištění kožených sedadel">ruční čištění kožených sedadel - 1500 Kč/5 sedadel. 1500 Kč</span>
+                  </label>
+                  <label class="checkbox-container" for="choice16">
+                    <input type="checkbox" class="choice" value="300" name="choice" id="choice16">
+                    <span class="label-text">Diagnostika chladiva autoklimatizace - 300 Kč</span>
+                  </label>
+                  <label class="checkbox-container" for="choice11">
+                    <input type="checkbox" class="choice" value="1800" name="choice" id="choice11">
+                    <span data-translate="deep-seat-cleaning" class="label-text" value="hloubkové čištění sedadel ">hloubkové čištění sedadel 1800 Kč/5 sedadel. 1800 Kč</span>
+                  </label>
+                  <label class="checkbox-container" for="choice10">
+                    <input type="checkbox" class="choice" value="1500" name="choice" id="choice10">
+                    <span data-translate="pet-cleaning-surcharge" class="label-text"
+                      value="Příplatek za čištění vozidla po zvířatech">Příplatek za čištění vozidla po zvířatech +1500
+                      Kč.</span>
+                  </label>
+                  <label class="checkbox-container" for="choice13">
+                    <input type="checkbox" class="choice" value="300" name="choice" id="choice13">
+                    <span data-translate="suv-cleaning-surcharge" class="label-text"
+                      value="Za čištění SUV nebo velké MPV příplatek 300 Kč k ceně čištění">Za čištění SUV nebo velké MPV
+                      příplatek
+                      300 Kč k ceně čištění</span>
+                  </label>
+                  <label class="checkbox-container" for="choice14">
+                    <input type="checkbox" class="choice" value="2000" name="choice" id="choice14">
+                    <span class="label-text">Plnění autoklimatizace - 1000 Kč + Záloha 1000 Kč na chladivo a olej</span>
+                  </label>
+                  <label class="checkbox-container" for="choice15">
+                    <input type="checkbox" class="choice" value="2500" name="choice" id="choice15">
+                    <span class="label-text">Plnění autoklimatizace a dezinfekce interiéru - 1500 Kč + Záloha 1000 Kč na chladivo a olej</span>
+                  </label>
+                  <label class="checkbox-container" id="vop-group"for="vop">
+                    <input type="checkbox" name="vop" required id="vop">
+                    <span if="vopLink" class="label-text" style="color: red;"
+                      data-translate="agree-to-processing">Souhlasím
+                      se zpracováním osobních údajů a
+                      <a style="color: red;">VOP*</a></span>
+                  </label>
+                  <div class="form-finish">
+                    <div class="finalPrice2-container">
+                      <label for="finalPrice2">
+                        <span data-translate="total-price">Celkova cena:</span>
+                      </label>
+                      <input type="text" readonly id="finalPrice2" value="Vyberte datum. " name="cena">
+                    </div>
+                    <div class="back-send-button-container">
+                      <button type="button" id="back-button" class="next-button">
+                        <span data-translate="back">Zpět</span>
+                      </button>
+                      <input id="o-nas" type="submit" id="send" class="next-button" value="Odeslat">
+                    </div>
+                  </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <p class="info-block">
+    Parkoviště u letiště Václava Havla, které se nachází velmi blízko letištního terminálu.<br><br>
+    Nabízíme levné parkování u letiště Praha s rychlým transferem tam i zpět v ceně.<br><br>
+    K dispozici krátkodobé i dlouhodobé stání, nonstop provoz a doplňkové služby.<br><br>
+    Kapacita vozů je omezena, ale běžná zavazadla a výbava se vejdou bez problému.<br><br>
+    Parkoviště je vhodné pro cestující hledající pohodlné a cenově dostupné řešení.<br><br>
+    Nenašli jste volné místo? Dejte nám vědět – pomůžeme najít řešení.<a href="#partners" style="color: var(--primary); font-weight: bold; text-decoration: underline;">Zjistit víc.</a><br><br><br><br>
+  </p>
+  
+
+
+  <section class="steps" id="steps">
+    <h3>Jak to funguje</h3>
+    <div class="step-icons">
+      <div class="step"><img src="reservation1.webp" /><p>Rezervace</p></div>
+      <div class="step"><img src="car1.webp" /><p>Příjezd na parkovište</p></div>
+      <div class="step"><img src="bus1.webp" /><p>Transfer na letiište</p></div>
+      <div class="step"><img src="marker1.webp" /><p>Místo výstupu</p></div>
+      <div class="step"><img src="phone1.webp" /><p>Zavolání po návratu</p></div>
+      <div class="step"><img src="marker1.webp" /><p>Srazové místo</p></div>
+      <div class="step"><img src="exit1.webp" /><p>Odjezd na parkovište</p></div>
+    </div>
+    <div style="text-align:center; margin-top: 2rem;">
+      <a href="Jak-funguje-HostParking.html" target="_blank" style=" display:flex; margin: auto; padding: 1rem 2rem; background: var(--accent); color: var(--primary); font-weight: bold; border-radius: 8px; text-decoration: none; width:fit-content; height: auto; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+        HostParking krok za krokem – vše, co potřebujete vědět.
+      </a>
+    </div>
+  </section>
+
+
+  <section class="block-price" id="block-price">
+    <p class="info-block">
+      Parkování za příznivé ceny, které potěší každého cestovatele.<br>
+      Říká se, že rozumná volba začíná právě tady.<br><br>
+  
+      Čím delší pobyt, tím obvykle výhodnější cena za den.<br>
+      Tak trochu princip "čím víc, tím líp" – ale v dobrém slova smyslu.<br><br>
+  
+      Ceny se přizpůsobují sezóně, ale zůstávají fér a bez přehánění.<br>
+      Jsme prostě takový normální parking.
+    </p>
+  </section>
+
+
+  <section class="prices" id="prices">
+    <h3>Ceník parkování</h3>
+    <div class="price-table-box">
+      <div class="price-table-content">
+        <h1 style="margin-bottom: 2.5%; padding-top:0.9rem; color:#8e2fca;" class="price-table-header">Ceny zahrnují DPH </h1>
+        <div class="table-button-wrapper">
+          <div style="display: none; position: absolute;  " id="monthName" class="month-name"></div>
+          <div class="month-buttons">
+            <div class="month-button-container">
+              <button id="priceButton1m">Leden</button>
+              <button id="priceButton2m">Únor</button>
+              <button id="priceButton3m">Březen</button>
+              <button id="priceButton4m">Duben</button>
+              <button id="priceButton5m">Květen</button>
+              <button id="priceButton6m">Červen</button>
+              <button id="priceButton7m">Červenec</button>
+              <button id="priceButton8m">Srpen</button>
+              <button id="priceButton9m">Září</button>
+              <button id="priceButton10m">Říjen</button>
+              <button id="priceButton11m">Listopad</button>
+              <button id="priceButton12m">Prosinec</button>
+            </div>
+          </div>
+          <div class="table-container">
+            <table class="price-table">
+              <thead>
+                <tr>
+                  <th>Den</th>
+                  <th>Cena</th>
+                </tr>
+              </thead>
+              <tbody class="pricesTableBody" id="pricesTableBody">
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <p style="text-align: center; font-size: small;" >Ceny v době rezervace</p>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <p class="info-block">
+      Podívejte se na naše aktuální fotografie přímo z parkoviště.<br><br>
+      Vše je v pořádku, upravené a připravené – přesně tak, jak to má být.<br><br>
+      Naše fotografie níže byly pořízeny v roce 2025 a odrážejí současný stav našeho areálu.
+  </p>
+
+
+  <section class="gallery" id="gallery">
+    <div class="slider">    
+      <div class="arrow left" onclick="prevSlide()">&#10094;</div>
+      <div class="slides">
+        <div class="slide"><img src="hostplane1.webp" alt="parkování nonstop u letiště"></div>
+        <div class="slide"><img src="img1.webp" alt="hostparking"></div>
+        <div class="slide"><img src="img2.webp" alt="levné dlouhodobé parkování"></div>
+        <div class="slide"><img src="img3.webp" alt="výhodné parkování letiště Praha"></div>
+        <div class="slide"><img src="img4.webp" alt="non stop parkování letiště"></div>
+        <div class="slide"><img src="img5.webp" alt="levné parkování letiště Praha"></div>
+        <div class="slide"><img src="img6.webp" alt="parkoviště letiště Praha"></div>
+        <div class="slide"><img src="img7.webp" alt="nejlevnější parkování letiště Praha"></div>
+        <div class="slide"><img src="img8.webp" alt="parkování u letiště Praha"></div>
+        <div class="slide"><img src="img9.webp" alt="letiště Václava Havla parking"></div>
+        <div class="slide"><img src="img10.webp" alt="hostparking"></div>
+        <div class="slide"><img src="img11.webp" alt="non stop parkování letiště"></div>
+        <div class="slide"><img src="img12.webp" alt="letiště Václava Havla parking"></div>
+        <div class="slide"><img src="img13.webp" alt="parkování letiště Praha"></div>
+        <div class="slide"><img src="img14.webp" alt="nejlevnější parkování letiště"></div>
+        <div class="slide"><img src="img15.webp" alt="parkování u letiště"></div>
+        <div class="slide"><img src="hostplane2.webp" alt="levné parkování letiště Praha"></div>
+      </div>
+      <div class="arrow right" onclick="nextSlide()">&#10095;</div>
+    </div>
+  </section>
+
+
+
+
+<section class="reviews-section" id="reviews">
+  <div id="shapo-widget-cf9b24a6173a91eac73d"></div>
+  <script id="shapo-embed-js" type="text/javascript" src="https://cdn.shapo.io/js/embed.js" defer></script>
+</section>
+<p class="info-block">
+  Podívejte se na náš blog – najdete tam užitečné tipy a informace pro cestující.
+</p>
+  <section class="blog-section" id="blog">
+    <h3>Užitečné tipy pro vaše cesty</h3>
+    <div class="blog-slider">
+      <div class="blog-slides">
+        <div class="blog-card">
+          <div class="blog-content">
+            <h4>Jak velký kufr do letadla (2025)</h4>
+            <p>Aktuální informace o požadavcích na velikost a hmotnost zavazadel.</p>
+            <a href="/Jak_velký_kufr_do_letadla_aktuální_informace_o_požadavcích_(2025).html" class="blog-link">Číst více</a>
+          </div>
+        </div>
+        <div class="blog-card">
+          <div class="blog-content">
+            <h4>Parkování u letiště: Placené vs. Zdarma</h4>
+            <p>Porovnání možností parkování a tipy, jak si vybrat to nejlepší.</p>
+            <a href="/Parkování_u_letiště_Praha_placené_nebo_zdarma_Rozumný_přístup.html" class="blog-link">Číst více</a>
+          </div>
+        </div>
+        <div class="blog-card">
+          <div class="blog-content">
+            <h4>HostParking krok za krokem</h4>
+            <p>Jednoduchý návod pro zákazníky, jak probíhá parkování u nás.</p>
+            <a href="/Jak-funguje-HostParking.html" class="blog-link">Číst více</a>
+          </div>
+        </div>
+        <div class="blog-card">
+          <div class="blog-content">
+            <h4>Srovnání cen parkování (Duben 2025)</h4>
+            <p>Kde zaparkovat u Letiště Václava Havla nejvýhodněji?</p>
+            <a href="/Srovnání-cen-parkování-u-Letiště-Václava-Havla-Kde-zaparkovat-v-dubnu-2025-nejvýhodněji.html" class="blog-link">Číst více</a>
+          </div>
+        </div>
+        <div class="blog-card">
+          <div class="blog-content">
+            <h4>Letištní průvodce 2025</h4>
+            <p>Odbavení na letišti Václava Havla i online krok za krokem.</p>
+            <a href="/Letištní průvodce 2025.html" class="blog-link">Číst více</a>
+          </div>
+        </div>
+        <div class="blog-card">
+          <div class="blog-content">
+            <h4>Kam k moři v květnu 2025</h4>
+            <p>10 nejlepších destinací s teplem, sluncem a klidem mimo sezónu.</p>
+            <a href="/Kam k moři v květnu 2025 10 nejlepších destinací s teplem, sluncem a klidem mimo sezónu.html" class="blog-link">Číst více</a>
+          </div>
+        </div>
+        <div class="blog-card">
+          <div class="blog-content">
+            <h4>Letiště Praha 2025: Služby a doprava</h4>
+            <p>Kompletní přehled služeb a nejpohodlnější způsoby dopravy.</p>
+            <a href="/Letiště Praha 2025 Kompletní přehled služeb a nejpohodlnější způsoby dopravy na letiště (2).html" class="blog-link">Číst více</a>
+          </div>
+        </div>
+        <div class="blog-card">
+          <div class="blog-content">
+            <h4>Dovolená u moře v létě 2025</h4>
+            <p>Nejlepší destinace, teploty a tipy na cestu z letiště Praha.</p>
+            <a href="/Dovolená u moře v létě 2025 Nejlepší destinace, teploty a tipy na cestu z letiště Praha.html" class="blog-link">Číst více</a>
+          </div>
+        </div>
+        <div class="blog-card">
+          <div class="blog-content">
+            <h4>Turecko z Prahy v září 2025</h4>
+            <p>Moře, trhy a dovolená bez víza – tipy a zkušenosti.</p>
+            <a href="/Turecko-z-Prahy-v-září-2025–moře-trhy-a-dovolená-bez-víza.html" class="blog-link">Číst více</a>
+          </div>
+        </div>
+        <div class="blog-card">
+          <div class="blog-content">
+            <h4>Zrušený let: Co dělat?</h4>
+            <p>Jak postupovat, jaká máte práva a jak se vyhnout chybám.</p>
+            <a href="/Zrušený_let_Co_dělat_a_jak_se_vyhnout_chybám.html" class="blog-link">Číst více</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <p class="info-block">
+    Poprvé u nás? Nemůžete nás najít? Mrkněte na video, které vás navede přímo k nám.
+  </p>
+  
+  <section class="video-section" id="video">
+    <h3>Jak se k nám dostat – podívejte se na video</h3>
+    <div class="video-container">
+      <div class="video-box">
+        <iframe height="100%" src="https://www.youtube.com/embed/Peo-2O-C6tk" credentialless
+          title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+        <p><a href="https://hostparking.cz"> HOSTPARKING</a><br>
+          Podívejte se na návod, jak se snadno dostat na naše parkoviště.</p>
+      </div>
+      <div class="video-box">
+        <iframe height="100%" src="https://www.youtube.com/embed/9I-d9C0IFxM" credentialless
+          title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+        <p><a href="https://hostparking.cz"> HOSTPARKING</a><br>
+          Navštivte náš YouTube kanál a sledujte další užitečná videa.</p>
+      </div>
+    </div>
+    
+  </section>
+
+  <p class="info-block">
+    Google Maps:<br><br>
+    Používáte Google? Klikněte na <a href="https://www.google.com/maps/place/HostParking/@50.0786894,14.2811581,17z/data=!3m1!4b1!4m6!3m5!1s0x470bbf3b6e0dec05:0xb76f3349588327d1!8m2!3d50.0786894!4d14.283733!16s%2Fg%2F11wp9bcn06?entry=ttu&g_ep=EgoyMDI1MDMyMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" style="color: var(--primary); font-weight: bold; text-decoration: underline;">„HOSTPARKING“</a> a automaticky se otevřou Mapy. Nebo název jednoduše napište ručně do vyhledávání.<br><br>
+    Seznam / Mapy.cz:<br><br>
+    Používáte Seznam? Stačí kliknout na <a href="https://mapy.cz/s/gekafenuta" target="_blank" style="color: var(--primary); font-weight: bold; text-decoration: underline;">„HOSTPARKING“</a> a Mapy.cz vás navedou až k nám. Případně zadejte název ručně do vyhledávače.<br><br>
+  </p>
+
+  <section class="map" id="contact">
+    <h3>Kde nás najdete</h3>
+    <iframe
+    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2373.7091435743287!2d14.281165776301087!3d50.078696871523455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNTDCsDA0JzQzLjMiTiAxNMKwMTcnMDEuNSJF!5e1!3m2!1sen!2scz!4v1734180611313!5m2!1sen!2scz"
+    width=100% height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </section>
+
+ 
+  <section id="partners" style="background: #6a0dad; padding: 4rem 2rem; color: white; text-align: center;">
+    <h3 style="color: var(--accent); margin-bottom: 2rem; font-size: 1.8rem;">NAŠI PARTNEŘI</h3>
+    <div class="partner-slider">
+      <div class="partner-track">
+        
+        <a href="https://fixvalet.cz" target="_blank" class="partner">
+          <img src="fixvalet.webp" alt="Fixvalet - parkování na letiště Václava Havla">
+          <p>Parkování na letiště Václava Havla</p>
+        </a>
+        
+        <a href="https://fixparking.cz" target="_blank" class="partner">
+          <img src="Fixparking.webp" alt="Fixparking - parkování u letiště Václava Havla">
+          <p>Parkování cca 10 minut od letiště. Parkování u letiště Václava Havla</p>
+        </a>
+        
+        <a href="https://prgparking.cz" target="_blank" class="partner">
+          <img src="prgparking.webp" alt="PRG Parking - výhodné parkování letiště Praha">
+          <p>Parkování 8-15 minut od letiště. Výhodné parkování letiště Praha</p>
+        </a>
+        
+        <a href="https://parkinghub.cz" target="_blank" class="partner">
+          <img src="PARKINGHUB.webp" alt="ParkingHub - levné parkování letiště Praha">
+          <p>Více parkovišť – různé lokality. Levné parkování letiště Praha</p>
+        </a>
+
+        <a href="https://fixvalet.cz" target="_blank" class="partner">
+          <img src="fixvalet.webp" alt="Fixvalet - non stop parkování letiště">
+          <p>2 minuty pesky od terminalu 1. Non stop parkování letiště</p>
+        </a>
+        
+        <a href="https://fixparking.cz" target="_blank" class="partner">
+          <img src="Fixparking.webp" alt="Fixparking - parkoviště u letiště Praha">
+          <p>Parkoviště u letiště Praha</p>
+        </a>
+        
+        <a href="https://prgparking.cz" target="_blank" class="partner">
+          <img src="prgparking.webp" alt="PRG Parking - dlouhodobé parkování Praha">
+          <p>PRG Parking - dlouhodobé parkování Praha</p>
+        </a>
+        
+        <a href="https://parkinghub.cz" target="_blank" class="partner">
+          <img src="PARKINGHUB.webp" alt="ParkingHub - nejlevnější parkování letiště Praha">
+          <p>najlepsi cenz zde</p>
+        </a>
+
+        <a href="https://fixvalet.cz" target="_blank" class="partner">
+          <img src="fixvalet.webp" alt="Fixvalet - parkování letiště Praha">
+          <p>Prezervace parkování online</p>
+        </a>
+        
+      </div>
+    </div>
+  </section>
+  
+
+
+  <footer>
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 2rem;">
+      
+      <div style="flex: 1 1 220px; text-align: center;">
+        <a href="https://hostparking.cz" target="_blank" rel="noopener">
+          <img src="IMG-20241214-WA0008.webp" alt="HostParking Logo" style="max-width: 180px;">
+        </a>
+      </div>
+  
+      <div style="flex: 2 1 300px; text-align: left; font-size: 0.95rem; line-height: 1.6;">
+        <p><strong>Telefon:</strong> <a href="tel:+420704827317" style="color: var(--accent); text-decoration: none;">+420 704 827 317</a></p>
+        <p><strong>Email:</strong> <a style="color: var(--accent); text-decoration: none;">rezervace@hostparking.cz</a></p>
+        <p><strong>Adresa:</strong>Hostivice, 253 01 HostParking <a href="https://g.co/kgs/qUp9k28" target="_blank"></a></p>
+      </div>
+  
+      <div style="flex: 2 1 300px; text-align: left;">
+        <p><a href="/oou.html" style="color: var(--accent); text-decoration: none;">Ochrana osobních údajů</a></p>
+        <p><a href="/VOP.pdf" download style="color: var(--accent); text-decoration: none;">VOP</a></p>
+        <p><a href="#" id="kontakty-footer" style="color: var(--accent); text-decoration: none;">Kontakt</a></p>
+      </div>
+    </div>
+  
+    <div style="margin-top: 2rem; text-align: center; color: #ccc;">
+      Copyright © 2024-2025 HostParking.cz – Všechna práva vyhrazena
+    </div>
+  </footer>
+
+
+
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('menu').classList.toggle('active');
+    }
+  
+    const steps = document.querySelectorAll('.step');
+  
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target); 
+        }
+      });
+    }, {
+      threshold: 0.4
+    });
+  
+    steps.forEach(step => {
+      observer.observe(step);
+    });
+  </script>
+
+
+  <script>
+    let index = 0;
+    const slides = document.querySelector('.slides');
+    const total = document.querySelectorAll('.slides .slide').length;
+
+    function updateSlide() {
+      slides.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    function nextSlide() {
+      index = (index + 1) % total;
+      updateSlide();
+    }
+
+    function prevSlide() {
+      index = (index - 1 + total) % total;
+      updateSlide();
+    }
+
+    setInterval(nextSlide, 5000);
+  </script>
+
+
+  <script>
+    let blogIndex = 0;
+    const blogSlides = document.querySelector('.blog-slides');
+    const blogCards = document.querySelectorAll('.blog-card');
+    const blogTotal = blogCards.length;
+
+    function updateBlogSlide() {
+      blogSlides.style.transform = `translateX(-${blogIndex * (blogCards[0].offsetWidth + 32)}px)`;
+    }
+
+    function nextBlogSlide() {
+      blogIndex = (blogIndex + 1) % blogTotal;
+      updateBlogSlide();
+    }
+
+    setInterval(nextBlogSlide, 10000); 
+  </script>
+
+  <script>
+    const partnerTrack = document.querySelector('.partner-track');
+    const partnerItems = document.querySelectorAll('.partner');
+    let partnerIndex = 0;
+
+    function updatePartnerSlider() {
+      const itemWidth = partnerItems[0].offsetWidth;
+      partnerTrack.style.transform = `translateX(-${partnerIndex * itemWidth}px)`;
+    }
+
+    function nextPartnerSlide() {
+      partnerIndex++;
+      if (partnerIndex > partnerItems.length - 4) { 
+        partnerIndex = 0;
+      }
+      updatePartnerSlider();
+    }
+
+    setInterval(nextPartnerSlide, 5000);
+  </script>
+
+<div class="contact-background" id="contact-background">
+  <div class="contact-grid">
+    <div class="infolink-box">
+      <a href="#" id="close"></a>
+      <h2 class="infolink-title"><span data-translate="contact-form">Kontaktní formulář</span><span
+          data-translate="infoline"></span></h2>
+    </div>
+    <div class="contact-us-box">
+      <form id="contact-form">
+        <input type="text" id="contact-form-name" placeholder="Jméno" required>
+        <input type="email" id="contact-form-email" placeholder="Email" required>
+        <textarea maxlength="300" maxrows="12" cols="60" wrap="hard" oninput="auto_grow(this)"
+          id="contact-form-message" placeholder="Zpráva" required></textarea>
+        <button type="submit" id="contact-form-submit"
+          class="submit-button"><span><span>Odeslat</span></span></button>
+      </form>
+    </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.13.18/jquery.timepicker.min.js"></script>
+<script defer src="/script.js"></script>
+<script defer src="/contactEmail.js"></script>
+</body>
+
+</html>

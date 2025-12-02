@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16807113216"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'AW-16807113216');
+  </script>
+
+  <head>
+    <meta name="description" content="HostParking - Parkoviště Hostivice u letiště Praha">
+    <meta charset="UTF-8">
+    <base target="_self" href="https://hostparking.cz">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HostParking</title>
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.13.18/jquery.timepicker.min.css">
+  </head>
+  <style>
+    .container {
+      padding: 1rem;
+      padding-top: 2rem;
+    }
+
+    section {
+      padding-top: 2rem;
+    }
+
+    p {
+      text-align: center;
+    }
+
+    .container div {
+      text-align: left;
+      width: 80%;
+    }
+  </style>
+
+<body>
+  <div class="header-bg">
+    <header class="header">
+      <a href="/" class="nav-bar-logo"><img alt="HostParking" id="header-logo" src="assets/logo_1.svg"></a>
+      <button id="menu-toggle" class="menu-toggle">&#9776;</button>
+      <div class="header-box" id="header-menu">
+        <a href="#prices-background" class="linkbox"><span>Ceny</span></a>
+        <a href="#video-container" id="instruction" class="linkbox"><span>Navod</span></a>
+        <a href="/blog/blog.html" class="linkbox"><span data-translate="instruction">Blog</span></a>
+        <a href="/info.html" class="linkbox"><span data-translate="prices">Info</span></a>
+        <a href="/services.html" class="linkbox"><span data-translate="reviews">Dop. služby</span></a>
+        <a href="https://parkinghub.cz" id="parkinghub" class="linkbox" target="_blank"
+          rel="noopener"><span>ParkingHub</span></a>
+        <a href="#kontakt-footer" id="kontakty" class="linkbox"><span data-translate="contacts">Kontakty</span></a>
+      </div>
+      <button id="pin">Pin</button>
+    </header>
+  </div>
+  <div class="container">
+    <section class="hero">
+      <div class="hero-content">
+        <h1>HostParking</h1>
+        <p>Parkování pro vaše auto, které se nachází přibližně 8 minut jízdy od letiště Václava Havla, což z něj činí
+          ideální volbu pro cestovatele hledající nejlevnější parkování u letiště Praha.</p>
+        <p>Cena parkování zahrnuje transfer na letiště a zpět pohodlnými vozy s prostorným zavazadlovým prostorem pro
+          veškerá vaše zavazadla, včetně jízdních kol, snowboardů, lyží a dalších objemných předmětů.</p>
+        <p>Služba je k dispozici <strong>24 hodin denně</strong>, takže ji můžete využít kdykoliv.</p>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="feature">
+        <h2>Nejlevnější parkování u letiště</h2>
+        <p>Jedním z našich priorit je nejlevnější parkování u letiště spojené s vysokou kvalitou služeb. Nabízíme
+          krátkodobé i dlouhodobé parkování automobilů u letiště Praha.</p>
+        <p>Kromě toho můžete využít další služby, jako je nastartování vozidla při vybití baterie, čištění automobilu,
+          doplnění klimatizace nebo úschova klíčů.</p>
+      </div>
+      <div class="feature">
+        <h2>Jednoduchý a rychlý transfer</h2>
+        <p>HostParking – parkování u letiště Praha s jednoduchým a rychlým transferem na letiště. HostParking je
+          nejlepší volbou pro parkování u letiště pro ty, kteří si cení svého času a chtějí začít svou cestu bez stresu.
+        </p>
+        <p><a href="#" class="button">Rezervujte si parkovací místo ještě dnes!</a></p>
+      </div>
+    </section>
+
+  </div>
+  <footer>
+    <div class="footer-content">
+      <p class="copyright">Copyright © 2024-2025 HostParking</p>
+      <img id="footer-logo" width="10rem" height="auto" alt="footer-logo" src="/assets/logo_1.png">
+      <nav class="footer-nav">
+        <a class="footer-link" href="/oou.html">Ochrana osobních údajů</a>
+        <a class="footer-link" href="/vop.html">VOP</a>
+        <a class="footer-link" id="kontakty-footer" href="#kontakty">Kontakt</a>
+      </nav>
+    </div>
+  </footer>
+  <div class="contact-background" id="contact-background">
+    <div class="contact-grid">
+      <div class="infolink-box">
+        <a href="#" id="close"></a>
+        <h2 class="infolink-title">Kontaktní formulář<span data-translate="infoline"></span></h2>
+      </div>
+      <div class="contact-us-box">
+        <form id="contact-form">
+          <input type="text" id="contact-form-name" placeholder="Jméno" required>
+          <input type="email" id="contact-form-email" placeholder="Email" required>
+          <textarea maxlength="300" maxrows="12" cols="60" wrap="hard" oninput="auto_grow(this)"
+            id="contact-form-message" placeholder="Zpráva" required></textarea>
+          <button type="submit" id="contact-form-submit" class="submit-button"><span>Odeslat</span></button>
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  <script>
+    const headerBox = document.querySelector('.header-bg');
+    let lastScrollTop = 0;
+    let isPinned = false;
+    let hideTimeout;
+    const scrollOffset = 400;
+
+    const showHeader = () => {
+      headerBox.classList.remove('hide');
+    };
+
+    const hideHeader = () => {
+      if (!isPinned) {
+        headerBox.classList.add('hide');
+      }
+    };
+
+    const pinButton = document.getElementById('pin');
+    headerBox.appendChild(pinButton);
+
+    pinButton.addEventListener('click', () => {
+      isPinned = !isPinned;
+      if (isPinned) {
+        showHeader();
+        pinButton.textContent = "Unpin";
+      } else {
+        pinButton.textContent = "Pin";
+        if (window.pageYOffset > headerBox.clientHeight) {
+          hideHeader();
+        }
+      }
+    });
+
+    const isMobile = () => {
+      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
+    const mobileDevice = isMobile();
+
+
+
+    if (!mobileDevice) {
+      window.addEventListener('scroll', () => {
+        clearTimeout(hideTimeout);
+        const st = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (st > lastScrollTop && st > headerBox.clientHeight + scrollOffset) {
+          hideHeader();
+        } else if (st < lastScrollTop || st <= headerBox.clientHeight + scrollOffset) {
+          showHeader();
+        }
+        lastScrollTop = st <= 0 ? 0 : st;
+      });
+
+      window.addEventListener('mousemove', (event) => {
+        if (window.pageYOffset > headerBox.clientHeight + scrollOffset) {
+          const proximityThreshold = 50;
+          if (event.clientY <= proximityThreshold) {
+            showHeader();
+            clearTimeout(hideTimeout);
+
+            hideTimeout = setTimeout(hideHeader, 1000);
+          }
+        }
+      });
+    }
+
+    const menuToggle = document.getElementById('menu-toggle');
+    const headerMenu = document.getElementById('header-menu');
+
+
+    menuToggle.addEventListener('click', () => {
+      headerMenu.classList.toggle('active');
+    });
+
+
+    if (mobileDevice) {
+      headerMenu.classList.add('mobile-menu');
+    }
+
+
+
+
+
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.12/pdfmake.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.12/vfs_fonts.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.13.18/jquery.timepicker.min.js"></script>
+  <script defer src="/contactEmail.js"></script>
+</body>
+
+</html>

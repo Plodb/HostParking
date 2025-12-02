@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="cs">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HostParking.cz</title>
+  <meta name="description"
+    content="HostParking.cz – Levné a bezpečné parkování u letiště Praha. Transfer zdarma, nonstop služby, férové ceny.">
+  <meta name="theme-color" content="#6a0dad" />
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <!-- Preconnects -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+  <link rel="preconnect" href="https://consent.cookiebot.com" />
+  <link rel="dns-prefetch" href="https://consent.cookiebot.com" />
+  <link rel="preconnect" href="https://cdn.shapo.io" crossorigin>
+
+
+  <link rel="preload" as="image" href="/bg-airport.webp" fetchpriority="high">
+  <!-- Cookiebot -->
+  <script data-cookieconsent="ignore">
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('consent', 'default', {
+      'ad_personalization': 'denied',
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'analytics_storage': 'denied',
+      'functionality_storage': 'denied',
+      'personalization_storage': 'denied',
+      'security_storage': 'granted',
+      'wait_for_update': 500
+    });
+    gtag("set", "ads_data_redaction", true);
+    gtag("set", "url_passthrough", false);
+  </script>
+  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="48fc90bf-2e4e-47d9-adc2-3bbf9bbc9e5a"
+    data-blockingmode="auto" defer></script>
+
+  <!-- Google tag -->
+  <script defer src="https://www.googletagmanager.com/gtag/js?id=AW-16807113216"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'AW-16807113216');
+  </script>
+</head>
+
+<body>
+  <div id="app"></div>
+  <script type="module" src="/src/main.ts" defer></script>
+</body>
+
+</html>

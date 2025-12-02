@@ -1,0 +1,22 @@
+{
+  "startDate": "2025-08-27",
+  "endDate": "2025-08-28",
+  "arriveTime": "11:01",
+  "DepartureTime": "11:01",
+  "finalPrice": 3000,
+  "email": "Sad@ss.sss",
+  "name": "awdaw",
+  "days": 1,
+  "phone": "21421424",
+  "model": "awdadw",
+  "pasCount": 1,
+  "formIdentifier": "valetForm",
+  "checkedOptions": [
+    {
+      "extraText": "Plnění a dezinfekce autoklimatizace"
+    }
+  ],
+  "additionalServicesPrice": 2500,
+  "createdAt": "2025-08-26T03:08:53.160Z",
+  "status": "pending"
+}

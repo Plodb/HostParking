@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta name="description" content="HostParking - Parkoviště Hostivice u letiště Praha">
+  </meta>
+  <meta charset="UTF-8">
+  <base target="_self" href="https://hostparking.cz">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HostParking</title>
+  <link rel="icon" href="/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+</head>
+<body>
+  <div class="header-bg">
+    <header class="header">
+      <a href="/" class="nav-bar-logo"><img alt="HostParking" id="header-logo" src="assets/logo_1.svg"></a>
+      <button id="menu-toggle" class="menu-toggle">&#9776;</button>
+      <div class="header-box" id="header-menu">
+        <a href="#prices-background" class="linkbox"><span>Ceny</span></a>
+        <a href="#video-container" id="instruction" class="linkbox"><span>Navod</span></a>
+        <a href="/blog/blog.html" class="linkbox"><span data-translate="instruction">Blog</span></a>
+        <a href="/info.html" class="linkbox"><span data-translate="prices">Info</span></a>
+        <a href="/services.html" class="linkbox"><span data-translate="reviews">Dop. služby</span></a>
+        <a href="https://parkinghub.cz" id="parkinghub" class="linkbox" target="_blank"
+          rel="noopener"><span>ParkingHub</span></a>
+        <a id="kontakty" class="linkbox"><span data-translate="contacts">Kontakty</span></a>
+      </div>
+      <button id="pin">Pin</button>
+    </header>
+  </div>
+  <div class="container">
+    <a id="return-button" href="/">Zpět</a>
+    <p>SAMPLE TEXT</p>
+  </div>
+  <footer>
+    <div class="footer-content">
+      <p class="copyright">Copyright © 2024 HostParking</p>
+      <img id="footer-logo" width="10rem" height="auto" alt="footer-logo" src="/assets/logo_1.svg">
+      <nav class="footer-nav">
+        <a class="footer-link" href="/oou.html">Ochrana osobních údajů</a>
+        <a class="footer-link" href="/vop.html">VOP</a>
+        <a class="footer-link" id="kontakty-footer" href="#kontakty">Kontakt</a>
+      </nav>
+    </div>
+  </footer>
+  <div class="contact-background" id="contact-background">
+    <div class="contact-grid">
+      <div class="infolink-box">
+        <a href="#" id="close"></a>
+        <h2 class="infolink-title">Kontaktní formulář<span data-translate="infoline"></span></h2>
+      </div>
+      <div class="contact-us-box">
+        <form id="contact-form">
+          <input type="text" id="contact-form-name" placeholder="Jméno" required>
+          <input type="email" id="contact-form-email" placeholder="Email" required>
+          <textarea maxlength="300" maxrows="12" cols="60" wrap="hard" oninput="auto_grow(this)"
+            id="contact-form-message" placeholder="Zpráva" required></textarea>
+          <button type="submit" id="contact-form-submit" class="submit-button"><span>Odeslat</span></button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+  <script defer src="/script.js"></script>
+  <script defer src="/contactEmail.js"></script>
+</body>
+</html>

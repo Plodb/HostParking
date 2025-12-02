@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doplňkové služby parkovišť – Čištění vozidel u letiště Praha</title>
+    <meta name="description" content="Profesionální čištění interiéru a exteriéru vozidel na parkovištích HostParking, FixParking a PRG Parking u letiště Praha. Mokré čištění sedadel, mytí karoserie, úklid po zvířatech a další doplňkové služby během parkování.">
+    <meta name="keywords" content="čištění vozidel u letiště Praha, čištění interiéru auta, mokré čištění sedadel, mytí karoserie Praha, parkování u letiště se službami, fixparking čištění, hostparking doplňkové služby, PRG parking čištění auta, hloubkové čištění sedadel, čištění po zvířatech auto">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Čištění aut během parkování u letiště Praha – HostParking.cz">
+    <meta property="og:description" content="Profesionální ruční čištění interiéru i exteriéru během vaší cesty. FixParking, PRGparking, HostParking.">
+    <meta property="og:image" content="https://hostparking.cz/images/climate_service.webp">
+    <meta property="og:url" content="https://hostparking.cz/doplnkove-sluzby">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="canonical" href="https://hostparking.cz/doplnkove-sluzby">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "AutoRepair",
+          "name": "Čištění vozidel u letiště Praha",
+          "image": "https://hostparking.cz/images/climate_service.webp",
+          "description": "Profesionální čištění vozidel u letiště Praha.",
+          "url": "https://hostparking.cz/doplnkove-sluzby",
+          "areaServed": "Praha",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Praha",
+            "addressCountry": "CZ"
+          },
+          "telephone": "+420704827317"
+        }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to bottom, #fbf1ff, #f0d3ff, #e2b0ff);
+            color: #333;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 25px;
+            background: #eff9b8;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            background: url('./climate_service.webp') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            z-index: 2;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6); 
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero-title {
+            font-size: 52px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #ffd700;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            margin-top: 10px;
+            color: #fff;
+        }
+
+        .hero-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 24px;
+            background: #ff4500;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .hero-button:hover {
+            background: #d83c00;
+        }
+
+
+        .header {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(to bottom, #ffd700, #fced9c, #ffd700);
+            font-size: 28px;
+            font-weight: bold;
+            color: #222;
+            border-radius: 12px 12px 0 0;
+        }
+
+        h2 {
+            color: #8a2be2;
+            margin: 20px 0 10px;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .service-box {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: #fafafa;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .image-container {
+            position: relative;
+            width: 250px;
+            height: 180px; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .service-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); 
+            transition: transform 0.2s ease-in-out;
+            cursor: pointer;
+        }
+
+        .service-box img:hover {
+            transform: scale(1.05); 
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            padding: 10px 14px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 20px;
+            transition: background 0.3s ease-in-out;
+            z-index: 10;
+            width: 40px; 
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .arrow:hover {
+            background: rgba(0, 0, 0, 1.8);
+        }
+
+        .arrow-left {
+            left: 0px; 
+        }
+
+        .arrow-right {
+            right: 0px; 
+        }
+
+        .fullscreen-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .fullscreen-container img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 12px;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: red;
+            color: white;
+            font-size: 24px;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 50%;
+            z-index: 1001;
+        }
+
+        .close-button:hover {
+            background: darkred;
+        }
+
+        .price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #8a2be2;
+        }
+
+        .cta-button {
+            display: block;
+            width: 100%;
+            max-width: 250px;
+            margin: 30px auto;
+            padding: 12px;
+            text-align: center;
+            background: #ff4500;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #d83c00;
+        }
+
+        .back-button {
+            display: block;
+            width: 150px;
+            margin: 20px auto;
+            padding: 10px;
+            text-align: center;
+            background: #444;
+            color: white;
+            font-size: 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .back-button:hover {
+            background: #222;
+        }
+
+
+       
+        @media (max-width: 768px) {
+            .service-box {
+                flex-direction: column;
+                text-align: center;
+            }
+            .image-container {
+                width: 200px; 
+                height: 150px;
+            }
+
+            .arrow {
+                font-size: 18px;
+                padding: 8px 12px;
+            }
+        }
+
+
+        .reviews {
+            text-align: center;
+            background: #eff9b8;
+            padding: 50px 20px;
+            margin-top: 40px;
+        }
+
+        .reviews h2 {
+            color: #8a2be2;
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+
+        .review-slider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .review-container {
+            overflow: hidden;
+            width: 900px;
+        }
+
+        .review-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            gap: 20px;
+        }
+
+        .review-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 280px;
+            text-align: center;
+            flex: 0 0 280px;
+        }
+
+        .review-card img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .review-text h3 {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .stars {
+            font-size: 18px;
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
+
+        .review-text p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .arrow {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            padding: 10px 14px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 22px;
+            transition: background 0.3s ease-in-out;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .arrow-left {
+            left: 0px;
+        }
+
+        .arrow-right {
+            right: 0px;
+        }
+
+        .arrow:hover {
+            background: rgba(0, 0, 0, 0.9);
+        }
+
+        .faq {
+            max-width: 1000px; 
+            margin: 40px auto; 
+            padding: 25px; 
+            background: #fafafa; 
+            border-radius: 12px; 
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            opacity: 0; 
+            transform: translateY(20px);
+            animation: fadeInUp 0.7s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .faq h2 {
+            text-align: center; 
+            margin-bottom: 20px; 
+            color: #8a2be2;
+            font-size: 26px;
+        }
+
+        .faq details {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+
+        .faq summary::-webkit-details-marker {
+            display: none;
+        }
+
+
+        .faq summary {
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 18px;
+            color: #000000;
+            list-style: none;
+            position: relative;
+            padding-right: 30px; 
+            transition: color 0.3s;
+        }
+
+
+        .faq summary:hover {
+            color: #ff4500;
+        }
+
+
+        .faq summary::after {
+            content: "▸";
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-size: 24px;
+            color: #ffd700;
+            transform: rotate(0deg);
+            transition: transform 0.3s ease;
+        }
+
+
+        .faq details[open] summary::after {
+            transform: rotate(90deg);
+        }
+
+
+        .faq details p {
+            margin: 10px 0 0 20px; 
+            color: #000000;
+            line-height: 1.6;
+        }
+
+        .contact {
+            text-align: center;
+            background: #eff9b8;
+            padding: 50px 20px;
+            margin-top: 40px;
+        }
+
+        .contact h2 {
+            color: #8a2be2;
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+
+        .contact-form {
+            max-width: 500px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .input-group {
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .input-group .icon {
+            font-size: 18px;
+            margin-right: 10px;
+            color: #8a2be2;
+        }
+
+        .input-group input,
+        .input-group textarea {
+            border: none;
+            width: 100%;
+            font-size: 16px;
+            padding: 5px;
+            outline: none;
+        }
+
+        .contact-form button {
+            padding: 12px;
+            background: #ff4500;
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .contact-form button:hover {
+            background: #d83c00;
+        }
+        
+        
+        .footer {
+            background-color: #1a0933;
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            text-align: left;
+            max-width: 1000px;
+            margin: 0 auto;
+            gap: 20px;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 220px;
+        }
+
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer hr {
+            margin: 30px auto;
+            width: 90%;
+            border: 1px solid #444;
+        }
+
+        .footer p,
+        .footer li {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #ccc;
+        }
+
+        .footer h3,
+        .footer h4 {
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        #scrollTopBtn {
+            display: none;   
+            position: fixed;           
+            bottom: 20px;              
+            right: 20px;                 
+            z-index: 99;                
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: #555;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 4px;
+            transition: 0.3s;
+        }
+
+        #scrollTopBtn:hover {
+            background-color: #333;     
+        }
+        
+        .overlay-disabled {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 0, 0, 0.7);
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            z-index: 20;
+            text-align: center;
+            padding: 15px;
+            text-shadow: 1px 1px 4px black;
+            pointer-events: none;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Profesionální čištění vozidel u letiště Praha</h1>
+            <p class="hero-subtitle">Levné parkování u letiště Václava Havla v Praze.</p>
+            <a href="https://fixparking.cz" class="hero-button">Objednat čištění na FIXparking</a>
+            <a href="https://hostparking.cz" class="hero-button">Objednat čištění na HOSTparking</a>
+            <a href="https://prgparking.cz" class="hero-button">Objednat čištění na PRGparking</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="header">Doplňkové služby parkovišť
+            <p style="font-size: 18px; line-height: 1.8; margin-top: 20px; color: #444;">
+                Nechte své auto hýčkat, zatímco vy si užíváte svou cestu! Na našich parkovištích <strong>FIXPARKING</strong>, <strong>HOSTPARKING</strong> a <strong>PRGPARKING</strong> nabízíme špičkové doplňkové služby, které promění vaše vozidlo do zářivě čistého stavu – uvnitř i zvenčí. Ať už potřebujete jen základní úklid interiéru, odstranění zvířecích chlupů, mokré hloubkové čištění nebo kompletní balíček s mytím karoserie, vše zvládneme během doby, kdy vaše auto stojí u nás.
+                <br><br>
+                Vše provádíme ručně a s maximální péčí, za použití ekologických přípravků a profesionální techniky. Díky tomu si při návratu z dovolené nebo služební cesty vyzvednete auto, které bude čistší než kdy dřív – a připravené na další dobrodružství.
+            </p>
+        </div>
+
+        <h2>Čištění vozidel</h2>
+        
+        <div class="service-box">
+            <div class="image-container">
+                <button class="arrow arrow-left" onclick="prevImage(0)">&#9664;</button>
+                <img src="cleaning-interior1.webp" class="service-image" alt="čištění auta u letiště Praha">
+                <button class="arrow arrow-right" onclick="nextImage(0)">&#9654;</button>
+            </div>
+            <div>
+                <p><strong>Čištění a vysátí interiéru vozidla</strong></p>
+                <p> Kompletní úklid interiéru – vyluxujeme podlahy,<br>
+                    vyčistíme plasty, otřeme palubní desku a osvěžíme vzduch.<br>
+                    Ideální, pokud chcete, aby váš vůz vypadal opět jako nový.</p>
+                <p class="price">1200 Kč</p>
+            </div>
+        </div>
+
+        <div class="service-box">
+            <div class="image-container">
+                <button class="arrow arrow-left" onclick="prevImage(1)">&#9664;</button>
+                <img src="cleaning-pets1.webp" class="service-image" alt="Čištění po zvířatech u letiště Praha">
+                <button class="arrow arrow-right" onclick="nextImage(1)">&#9654;</button>
+            </div>
+            <div>
+                <p><strong>Čištění vozidla po zvířatech</strong></p>
+                <p>Specializované odstranění chlupů z čalounění a neutralizace zvířecích pachů.<br>
+                   Perfektní služba pro majitele psů a koček,<br>
+                   kteří chtějí čisté a svěží auto.</p>
+                <p class="price">1500 Kč</p>
+            </div>
+        </div>
+
+        <div class="service-box">
+            <div class="image-container">
+                <button class="arrow arrow-left" onclick="prevImage(2)">&#9664;</button>
+                <img src="deep-cleaning1.webp" class="service-image" alt="Hloubkové čištění auta u letiště Praha">
+                <button class="arrow arrow-right" onclick="nextImage(2)">&#9654;</button>
+            </div>
+            <div>
+                <p><strong>Mokré hloubkové čištění sedadel</strong></p>
+                <p> Intenzivní čištění textilních sedadel profesionálním extraktorem.<br>
+                    Váš interiér opět zazáří.</p>
+                <p class="price">1800 Kč / 5 sedadel</p>
+            </div>
+        </div>
+
+        <h2>Komplexní balíčky</h2>
+
+        <div class="service-box">
+            <div class="image-container">
+                <button class="arrow arrow-left" onclick="prevImage(3)">&#9664;</button>
+                <img src="package-standard1.webp" class="service-image" alt="Balík čištění auta Standard u letiště Praha">
+                <button class="arrow arrow-right" onclick="nextImage(3)">&#9654;</button>
+            </div>
+            <div>
+                <p><strong>Balík 1200 Standard</strong></p>
+                <p>Základní čištění interiéru – vysátí, otření palubní desky.</p>
+                <p class="price">1200 Kč</p>
+                <div class="overlay-disabled">❌ Tato služba je dočasně mimo provoz</div>
+            </div>
+        </div>
+
+        
+        <div class="service-box">
+            <div class="image-container">
+                <button class="arrow arrow-left" onclick="prevImage(4)">&#9664;</button>   
+                <img src="package-gold1.webp" class="service-image" alt="Komplex balík">
+                <button class="arrow arrow-right" onclick="nextImage(4)">&#9654;</button>
+            </div>
+            <div>
+                <p><strong>Balík 2000 Komplex</strong></p>
+                <p>Kombinace důkladného čištění interiéru a vnějšího ručního mytí karoserie.<br>
+                   Získáte čistotu uvnitř i zářivý vzhled zvenčí – během jednoho parkování.</p>
+                <p class="price">2000 Kč</p>
+            </div>
+            <div class="overlay-disabled">❌ Tato služba je dočasně mimo provoz</div>
+        </div>
+
+        <div class="service-box">
+            <div class="image-container">
+                <button class="arrow arrow-left" onclick="prevImage(5)">&#9664;</button>     
+                <img src="package-exclusive1.webp" class="service-image" alt="Exclusive balík čištění auta u letiště Praha">
+                <button class="arrow arrow-right" onclick="nextImage(5)">&#9654;</button>
+            </div>
+            <div>
+                <p><strong>Balík 4000 Exclusive</strong></p>
+                <p>rémiový balíček pro náročné: hloubkové čištění interiéru,<br>
+                    mokré čištění sedadel a ruční mytí karoserie včetně leštění.<br>
+                    Luxusní zážitek pro vaše auto.</p>
+                <p class="price">4000 Kč</p>
+            </div>
+        </div>
+
+        <a href="https://fixparking.cz" class="cta-button">Objednat čištění na FIXparking</a>
+        <a href="https://hostparking.cz" class="cta-button">Objednat čištění na HOSTparking</a>
+        <a href="https://prgparking.cz" class="cta-button">Objednat čištění na PRGparking</a>
+        <a href="javascript:history.back()" class="back-button">← Zpět</a>
+    </div>
+
+    <div id="fullscreen-container" class="fullscreen-container" onclick="closeFullscreen()">
+        <button class="close-button" onclick="closeFullscreen()">×</button>
+        <img id="fullscreen-image" src="" alt="Fullscreen Image">
+    </div>
+
+
+    <section id="reviews" class="reviews">
+        <h2>Co říkají naši zákazníci?</h2>
+        <div class="review-slider">
+            <button class="arrow arrow-left" onclick="prevReview()">&#9664;</button>
+            <div class="review-container">
+                <div class="review-track">
+                    <div class="review-card">
+                        <img src="customer1.webp" alt="Jan Novák">
+                        <div class="review-text">
+                            <h3>Jan Novák</h3>
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                            <p>"Nejlepší čištění interiéru, jaké jsem kdy měl! Auto vonělo jako nové."</p>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <img src="customer2.webp" alt="Petra Kovářová">
+                        <div class="review-text">
+                            <h3>Petra Kovářová</h3>
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                            <p>"Skvělý servis a rychlé čištění během mého parkování u letiště!"</p>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <img src="customer3.webp" alt="Martin Dvořák">
+                        <div class="review-text">
+                            <h3>Martin Dvořák</h3>
+                            <div class="stars">⭐⭐⭐⭐</div>
+                            <p>"Profesionální přístup, doporučuji všem!"</p>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <img src="customer4.webp" alt="Jana Smítková">
+                        <div class="review-text">
+                            <h3>Jana Smítková</h3>
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                            <p>"Auto bylo po čištění jako nové! Doporučuji."</p>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <img src="customer5.webp" alt="Tomáš Vrána">
+                        <div class="review-text">
+                            <h3>Tomáš Vrána</h3>
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                            <p>"Výborné služby a rychlost! Velká spokojenost."</p>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <img src="customer6.webp" alt="Eva Šimková">
+                        <div class="review-text">
+                            <h3>Eva Šimková</h3>
+                            <div class="stars">⭐⭐⭐⭐</div>
+                            <p>"Skvělý servis, určitě znovu využiji."</p>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <img src="customer7.webp" alt="Marek Novotný">
+                        <div class="review-text">
+                            <h3>Marek Novotný</h3>
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                            <p>"Rychlé a profesionální jednání. Doporučuji!"</p>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <img src="customer8.webp" alt="Karel Kučera">
+                        <div class="review-text">
+                            <h3>Karel Kučera</h3>
+                            <div class="stars">⭐⭐⭐⭐</div>
+                            <p>"Velmi dobrá cena za skvělou práci!"</p>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <img src="customer9.webp" alt="Lucie Doležalová">
+                        <div class="review-text">
+                            <h3>Lucie Doležalová</h3>
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                            <p>"Nejlepší čištění auta, co jsem kdy měla."</p>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <img src="customer10.webp" alt="Radek Král">
+                        <div class="review-text">
+                            <h3>Radek Král</h3>
+                            <div class="stars">⭐⭐⭐⭐</div>
+                            <p>"Profesionální služby za super cenu."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="arrow arrow-right" onclick="nextReview()">&#9654;</button>
+        </div>
+    </section>
+
+    <section id="faq" class="faq" style="max-width: 1000px; margin: 40px auto; padding: 25px; background: #fafafa; border-radius: 12px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);">
+        <h2 style="text-align: center; margin-bottom: 20px; color: #8a2be2;">Často kladené otázky</h2>
+       
+        <details style="margin-bottom: 15px;">
+          <summary><strong>Mohu rezervovat čištění auta přímo při příjezdu na parkoviště?</strong></summary>
+          <p style="margin: 10px 0 0 20px;">Ano, většinou je možné domluvit se přímo na místě, avšak doporučujeme rezervaci předem kvůli kapacitě.</p>
+        </details>
+    
+        <details style="margin-bottom: 15px;">
+          <summary><strong>Jak probíhá platba za služby čištění?</strong></summary>
+          <p style="margin: 10px 0 0 20px;">Platbu lze provést hotově nebo kartou. Detaily se dozvíte po dokončení rezervace či na místě.</p>
+        </details>
+    
+        <details style="margin-bottom: 15px;">
+          <summary><strong>Čistíte i zvířecí chlupy a odstraňujete pachy po zvířatech?</strong></summary>
+          <p style="margin: 10px 0 0 20px;">Ano, nabízíme speciální čištění po zvířatech, které zahrnuje odstranění chlupů i pachů.</p>
+        </details>
+    
+        <details style="margin-bottom: 15px;">
+          <summary><strong>Jak často je doporučeno provádět hloubkové čištění sedadel?</strong></summary>
+          <p style="margin: 10px 0 0 20px;">Hloubkové čištění je vhodné zhruba jednou za rok, případně dle potřeby (např. po rozsáhlém znečištění).</p>
+        </details>
+    
+        <details style="margin-bottom: 15px;">
+          <summary><strong>Poskytujete také mytí exteriéru vozidla?</strong></summary>
+          <p style="margin: 10px 0 0 20px;">Ano, v našich balíčcích Komplex a Exclusive je součástí také umytí karoserie.</p>
+        </details>
+    
+        <details style="margin-bottom: 15px;">
+          <summary><strong>Je možné kombinovat více služeb najednou (např. čištění interiéru a opravu klimatizace)?</strong></summary>
+          <p style="margin: 10px 0 0 20px;">Určitě. Zvolte komplexní balíček nebo nás kontaktujte pro individuální kombinaci služeb.</p>
+        </details>
+    
+        <details style="margin-bottom: 15px;">
+          <summary><strong>Jsou vaše čisticí prostředky šetrné k životnímu prostředí?</strong></summary>
+          <p style="margin: 10px 0 0 20px;">Ano, používáme ekologicky šetrné přípravky, které jsou zároveň velmi efektivní.</p>
+        </details>
+    
+        <details style="margin-bottom: 15px;">
+          <summary><strong>Mohu po čištění ihned odjet, nebo je třeba čekat, než vše vyschne?</strong></summary>
+          <p style="margin: 10px 0 0 20px;">Po základním interiérovém čištění lze obvykle hned odjet. U mokrého hloubkového čištění doporučujeme nechat textilie pár hodin provětrat.</p>
+        </details>
+    </section>
+
+   
+    <section id="contact" class="contact">
+        <h2>Kontaktujte nás</h2>
+        <form class="contact-form">
+            <div class="input-group">
+                <span class="icon">👤</span>
+                <input type="text" placeholder="Jméno" required>
+            </div>
+            <div class="input-group">
+                <span class="icon">📧</span>
+                <input type="email" placeholder="E-mail" required>
+            </div>
+            <div class="input-group">
+                <span class="icon">✉️</span>
+                <textarea placeholder="Vaše zpráva" required></textarea>
+            </div>
+            <button type="submit">📩 Odeslat zprávu</button>
+        </form>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>FIXPARKING</h4>
+                <p>
+                    📍 <a href="https://www.google.com/maps/place/Fixparking/@50.0615767,14.2952541,17z/data=!4m6!3m5!1s0x470bbf440ee464ff:0x9afdfb1f27d339cc!8m2!3d50.0616037!4d14.2970337!16s%2Fg%2F11h8k5g3vr?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoASAFQAw%3D%3D" target="_blank">FIX PARKING - Praha 5 – Zličín  </a><br>
+                    📞 <a href="tel:+420731777775">+420 731 777 775</a><br>
+                    ✉️ <a href="mailto:rezervace@fixparking.cz">rezervace@fixparking.cz</a>
+                </p>
+            </div>
+            <div class="footer-column">
+                <h4>HOSTPARKING</h4>
+                <p>
+                    📍 <a href="https://www.google.com/maps?q=HostParking,+Hostivice,+253+01" target="_blank">HOST PARKING - Hostivice</a><br>
+                    📞 <a href="tel:+420704827317">+420 704 827 317</a><br>
+                    ✉️ <a href="mailto:rezervace@hostparking.cz">rezervace@hostparking.cz</a>
+                </p>
+            </div>
+            <div class="footer-column">
+                <h4>PRGPARKING</h4>
+                <p>
+                    📍 <a href="https://www.google.com/maps/place/PRG+Parking+-+Parkovi%C5%A1t%C4%9B+u+leti%C5%A1t%C4%9B+Praha/@50.0869201,14.3157429,612m/data=!3m2!1e3!4b1!4m6!3m5!1s0x470bbfe2c2d1783d:0xe492d8b171cec583!8m2!3d50.0869167!4d14.3183232!16s%2Fg%2F11sdwl829f?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D" target="_blank">PRG Parking - U Prioru 4, 161 00 Praha 6, Ruzyně</a><br>
+                    📞 <a href="tel:+420731229209">+420 731 229 209</a><br>
+                    ✉️ <a href="mailto:rezervace@prgparking.cz">rezervace@prgparking.cz</a>
+                </p>
+            </div>
+        </div>
+        <hr>
+        <p class="copyright">© 2025 HostParking.cz – Všechna práva vyhrazena.</p>
+    </footer>
+
+    <button id="scrollTopBtn" title="Наверх" onclick="topFunction()">&#9650;</button>
+
+    <script>
+        const images = [
+            ["cleaning-interior1.webp", "cleaning-interior2.webp", "cleaning-interior3.webp"],
+            ["cleaning-pets1.webp", "cleaning-pets2.webp", "cleaning-pets3.webp"],
+            ["deep-cleaning1.webp", "deep-cleaning2.webp", "deep-cleaning3.webp"],
+            ["package-standard1.webp", "package-standard2.webp", "package-standard3.webp"],
+            ["package-gold1.webp", "package-gold2.webp", "package-gold3.webp"],
+            ["package-exclusive1.webp", "package-exclusive2.webp", "package-exclusive3.webp"]
+        ];
+    
+        let imageIndex = new Array(images.length).fill(0);
+    
+        function nextImage(serviceIndex) {
+            imageIndex[serviceIndex] = (imageIndex[serviceIndex] + 1) % images[serviceIndex].length;
+            updateImage(serviceIndex);
+        }
+    
+        function prevImage(serviceIndex) {
+            imageIndex[serviceIndex] = (imageIndex[serviceIndex] - 1 + images[serviceIndex].length) % images[serviceIndex].length;
+            updateImage(serviceIndex);
+        }
+    
+        function updateImage(serviceIndex) {
+            const imgElements = document.querySelectorAll('.service-box .service-image');
+            imgElements[serviceIndex].src = images[serviceIndex][imageIndex[serviceIndex]];
+        }
+    
+        
+        
+        let reviewIndex = 0;
+        const totalReviews = document.querySelectorAll(".review-card").length;
+        const reviewsToShow = 3;
+        const reviewTrack = document.querySelector(".review-track");
+        const reviewWidth = document.querySelector(".review-card").offsetWidth + 20;
+    
+        function updateReviews() {
+            reviewTrack.style.transform = `translateX(-${reviewIndex * reviewWidth}px)`;
+        }
+    
+        function nextReview() {
+            if (reviewIndex < totalReviews - reviewsToShow) {
+                reviewIndex++;
+            } else {
+                reviewIndex = 0;
+            }
+            updateReviews();
+        }
+    
+        function prevReview() {
+            if (reviewIndex > 0) {
+                reviewIndex--;
+            } else {
+                reviewIndex = totalReviews - reviewsToShow;
+            }
+            updateReviews();
+        }
+    
+        setInterval(nextReview, 5000);
+    </script>
+    
+
+
+    <script>
+        document.querySelectorAll('.nav-links a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+
+
+    <script>
+
+        function openFullscreen(imageSrc) {
+        const fullscreenContainer = document.getElementById('fullscreen-container');
+        const fullscreenImage = document.getElementById('fullscreen-image');
+    
+        fullscreenImage.src = imageSrc;
+        fullscreenContainer.style.display = 'flex'; 
+        }
+    
+
+        function closeFullscreen() {
+        const fullscreenContainer = document.getElementById('fullscreen-container');
+        fullscreenContainer.style.display = 'none';
+        }
+    
+        document.querySelectorAll('.service-image').forEach(img => {
+        img.addEventListener('click', function () {
+            openFullscreen(this.src);
+        });
+        });
+
+    </script>
+
+    <script>
+        const scrollTopBtn = document.getElementById("scrollTopBtn");
+    
+        window.onscroll = function() {
+
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            scrollTopBtn.style.display = "block";
+        } else {
+            scrollTopBtn.style.display = "none";
+        }
+        };
+    
+        function topFunction() {
+        document.body.scrollTop = 0; 
+        document.documentElement.scrollTop = 0; 
+        }
+    </script>
+
+</body>
+</html>

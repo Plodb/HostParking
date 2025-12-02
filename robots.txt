@@ -1,0 +1,12 @@
+User-agent: *
+Disallow: /submissions/
+Disallow: /status
+Disallow: /accept
+Disallow: /cancel
+Disallow: /customer-cancel
+Disallow: /accept-redirect-prg
+Disallow: /redirected-to-prg
+Disallow: /directed-to-fix
+Disallow: /fixaccept-redirect-fix
+
+Allow: /
