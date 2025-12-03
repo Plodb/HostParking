@@ -4,11 +4,11 @@
       <header class="site-header">
   <div class="header-container">
     <!-- Logo -->
-    <h1 class="logo">
+    <div class="logo">
       <RouterLink to="/" class="logo-link">
         <span class="logo-primary">HOST</span><span class="logo-accent">PARKING</span>
       </RouterLink>
-    </h1>
+    </div>
 
     <!-- Desktop nav -->
     <nav class="nav-desktop">
