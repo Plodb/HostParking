@@ -40,8 +40,7 @@
         <!-- Logo -->
         <div class="footer-logo">
           <a href="https://hostparking.cz" target="_blank" rel="noopener">
-            <!-- ИМПОРТИРУЕМ КАРТИНКУ -->
-            <img :src="footerLogo" alt="HostParking Logo" />
+            <img src="/logoHphead.webp" alt="HostParking Logo" />
           </a>
         </div>
 
@@ -69,7 +68,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { RouterView, RouterLink } from 'vue-router'
-import footerLogo from '@/assets/IMG-20241214-WA0008.webp'
 
 const mobileMenu = ref(false)
 function toggleMenu() {

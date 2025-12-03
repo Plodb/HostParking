@@ -4,7 +4,7 @@
     <section class="hero">
       <div class="hero-content">
         <h1 class="force-white heading header-shadow font-bold leading-snug hero-heading">
-          Levné parkování u letiště Václava Havla v Praze
+          CBT
         </h1>
         <p class="force-white subheading header-shadow font-bold hero-heading">
           Parkování u letiště Praha
@@ -20,8 +20,7 @@
 
     <section style="padding-top: 21rem;" class="text-section">
       <div class="text-box">
-        <p>HostParking – parkování pro vaše auto, které se nachází přibližně 8 minut jízdy od letiště Václava Havla, což z
-          něj činí ideální volbu pro cestovatele hledající nejlevnější parkování u letiště Praha.</p>
+        <p>Sleva pri platbe hotove </p>
       </div>
     </section>
 
@@ -29,34 +28,13 @@
     <section class="steps" id="steps">
       <h3>Jak to funguje</h3>
       <div class="step-icons">
-        <div class="step">
-          <img :src="reservationImg" alt="Rezervace" />
-          <p>Rezervace</p>
-        </div>
-        <div class="step">
-          <img :src="carImg" alt="Příjezd" />
-          <p>Příjezd na parkoviště</p>
-        </div>
-        <div class="step">
-          <img :src="busImg" alt="Transfer" />
-          <p>Transfer na letiště</p>
-        </div>
-        <div class="step">
-          <img :src="markerImg" alt="Výstup" />
-          <p>Místo výstupu</p>
-        </div>
-        <div class="step">
-          <img :src="phoneImg" alt="Zavolání" />
-          <p>Zavolání po návratu</p>
-        </div>
-        <div class="step">
-          <img :src="markerImg" alt="Sraz" />
-          <p>Srazové místo</p>
-        </div>
-        <div class="step">
-          <img :src="exitImg" alt="Odjezd" />
-          <p>Odjezd na parkoviště</p>
-        </div>
+        <div class="step"><img src="/reservation1.webp" alt="Rezervace" /><p>Rezervace</p></div>
+        <div class="step"><img src="/car1.webp" alt="Příjezd" /><p>Příjezd na parkovište</p></div>
+        <div class="step"><img src="/bus1.webp" alt="Transfer" /><p>Transfer na letiště</p></div>
+        <div class="step"><img src="/marker1.webp" alt="Výstup" /><p>Místo výstupu</p></div>
+        <div class="step"><img src="/phone1.webp" alt="Zavolání" /><p>Zavolání po návratu</p></div>
+        <div class="step"><img src="/marker1.webp" alt="Sraz" /><p>Srazové místo</p></div>
+        <div class="step"><img src="/exit1.webp" alt="Odjezd" /><p>Odjezd na parkovište</p></div>
       </div>
       <div class="steps-link">
         <a href="Jak-funguje-HostParking.html" target="_blank">
@@ -75,110 +53,118 @@
     </section>
 
     <!-- Prices -->
-    <section class="prices" id="prices">
-      <PriceCalendar />
-    </section>
+<section class="prices" id="prices">
+  <PriceCalendar />
+</section>
 
     <p class="info-block">
-      Podívejte se na naše aktuální fotografie přímo z parkoviště.<br><br>
-      Vše je v pořádku, upravené a připravené – přesně tak, jak to má být.<br><br>
-      Naše fotografie níže byly pořízeny v roce 2025 a odrážejí současný stav našeho areálu.
-    </p>
+  Podívejte se na naše aktuální fotografie přímo z parkoviště.<br><br>
+  Vše je v pořádku, upravené a připravené – přesně tak, jak to má být.<br><br>
+  Naše fotografie níže byly pořízeny v roce 2025 a odrážejí současný stav našeho areálu.
+</p>
 
     <!-- Gallery -->
     <section class="gallery" id="gallery">
-      <div class="slider">
-        <div class="arrow left" @click="prevSlide">&#10094;</div>
-        <div class="slides" :style="{ transform: `translateX(-${currentIndex * 100}%)` }">
-          <div class="slide" v-for="(image, index) in galleryImages" :key="index">
-            <img :src="image.src" :alt="image.alt" />
-          </div>
-        </div>
-        <div class="arrow right" @click="nextSlide">&#10095;</div>
-      </div>
-    </section>
-
-    <section class="reviews-section" id="reviews">
-      <div id="shapo-widget-cf9b24a6173a91eac73d"></div>
-    </section>
-
-    <p class="info-block">
-      Podívejte se na náš blog – najdete tam užitečné tipy a informace pro cestující.
-    </p>
-
-    <!-- BLOG -->
-    <section class="blog-section" id="blog">
-      <h3>Užitečné tipy pro vaše cesty</h3>
-      <div class="blog-slider">
-        <div class="blog-slides" ref="blogSlides">
-          <div class="blog-card" v-for="(post, i) in posts" :key="i">
-            <div class="blog-content">
-              <h4>{{ post.title }}</h4>
-              <p>{{ post.desc }}</p>
-              <a :href="post.href" class="blog-link" target="_blank">Číst více</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <p class="info-block">
-      Poprvé u nás? Nemůžete nás najít? Mrkněte na video, které vás navede přímo k nám.
-    </p>
-
-    <!-- VIDEO -->
-    <section class="video-section" id="video">
-      <h3>Jak se k nám dostat – podívejte se na video</h3>
-      <div class="video-container">
-        <div
-          v-for="(video, i) in videos"
-          :key="i"
-          class="video-box"
-        >
-          <!-- Pokud video není načteno — ukazujeme náhled -->
-          <div v-if="!video.loaded" class="yt-lazy" @click="loadVideo(i)">
-            <img :src="`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`" :alt="`Video ${i+1}`" />
-            <button class="yt-play">▶</button>
-            <p v-html="video.text"></p>
-          </div>
-
-          <!-- Pokud video je načteno — iframe -->
-          <div v-else class="yt-frame">
-            <iframe
-              :src="`https://www.youtube.com/embed/${video.id}?autoplay=1`"
-              title="YouTube video player"
-              frameborder="0"
-              allowfullscreen
-              loading="lazy"
-            ></iframe>
-            <p v-html="video.text"></p>
-          </div>
+  <div class="slider">
+    <div class="arrow left" @click="prevSlide">&#10094;</div>
+    <div class="slides" :style="{ transform: `translateX(-${currentIndex * 100}%)` }">
+      <div class="slide"><img src="/img1.webp" alt="hostparking" /></div>
+      <div class="slide"><img src="/img2.webp" alt="levné dlouhodobé parkování" /></div>
+      <div class="slide"><img src="/img3.webp" alt="výhodné parkování letiště Praha" /></div>
+      <div class="slide"><img src="/img4.webp" alt="non stop parkování letiště" /></div>
+      <div class="slide"><img src="/img5.webp" alt="levné parkování letiště Praha" /></div>
+      <div class="slide"><img src="/img6.webp" alt="parkoviště letiště Praha" /></div>
+      <div class="slide"><img src="/img7.webp" alt="nejlevnější parkování letiště Praha" /></div>
+      <div class="slide"><img src="/img8.webp" alt="parkování u letiště Praha" /></div>
+      <div class="slide"><img src="/img9.webp" alt="letiště Václava Havla parking" /></div>
+      <div class="slide"><img src="/img10.webp" alt="hostparking" /></div>
+      <div class="slide"><img src="/img11.webp" alt="non stop parkování letiště" /></div>
+      <div class="slide"><img src="/img12.webp" alt="letiště Václava Havla parking" /></div>
+      <div class="slide"><img src="/img13.webp" alt="parkování letiště Praha" /></div>
+      <div class="slide"><img src="/img14.webp" alt="nejlevnější parkování letiště" /></div>
+      <div class="slide"><img src="/img15.webp" alt="parkování u letiště" /></div>
+    </div>
+    <div class="arrow right" @click="nextSlide">&#10095;</div>
+  </div>
+</section>
+<section class="reviews-section" id="reviews">
+  <div id="shapo-widget-cf9b24a6173a91eac73d"></div>
+</section>
+<p class="info-block">
+  Podívejte se na náš blog – najdete tam užitečné tipy a informace pro cestující.
+</p>
+<!-- BLOG -->
+<section class="blog-section" id="blog">
+  <h3>Užitečné tipy pro vaše cesty</h3>
+  <div class="blog-slider">
+    <div class="blog-slides" ref="blogSlides">
+      <div class="blog-card" v-for="(post, i) in posts" :key="i">
+        <div class="blog-content">
+          <h4>{{ post.title }}</h4>
+          <p>{{ post.desc }}</p>
+          <a :href="post.href" class="blog-link" target="_blank">Číst více</a>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+<p class="info-block">
+    Poprvé u nás? Nemůžete nás najít? Mrkněte na video, které vás navede přímo k nám.
+  </p>
+<!-- VIDEO -->
+<section class="video-section" id="video">
+    <h3>Jak se k nám dostat – podívejte se na video</h3>
+    <div class="video-container">
+      <div
+        v-for="(video, i) in videos"
+        :key="i"
+        class="video-box"
+      >
+        <!-- Если видео не загружено — показываем превью -->
+        <div v-if="!video.loaded" class="yt-lazy" @click="loadVideo(i)">
+          <img :src="`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`" :alt="`Video ${i+1}`" />
+          <button class="yt-play">▶</button>
+          <p v-html="video.text"></p>
+        </div>
 
-    <!-- MAP -->
-    <section class="map" id="contact">
-      <h3>Kde nás najdete</h3>
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2373.7091435743287!2d14.281165776301087!3d50.078696871523455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNTDCsDA0JzQzLjMiTiAxNMKwMTcnMDEuNSJF!5e1!3m2!1sen!2scz!4v1734180611313!5m2!1sen!2scz"
-        title="Mapa umístění HostParking"
-        allowfullscreen
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-      ></iframe>
-    </section>
+        <!-- Если видео загружено — iframe -->
+        <div v-else class="yt-frame">
+          <iframe
+            :src="`https://www.youtube.com/embed/${video.id}?autoplay=1`"
+            title="YouTube video player"
+            frameborder="0"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+          <p v-html="video.text"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- MAP -->
+<section class="map" id="contact">
+  <h3>Kde nás najdete</h3>
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2373.7091435743287!2d14.281165776301087!3d50.078696871523455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNTDCsDA0JzQzLjMiTiAxNMKwMTcnMDEuNSJF!5e1!3m2!1sen!2scz!4v1734180611313!5m2!1sen!2scz"
+    title="Mapa umístění HostParking"
+    allowfullscreen
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+  ></iframe>
+</section>
 
     <!-- Partners -->
     <section id="partners" class="partners">
       <h3>Naši partneři</h3>
       <div class="partner-logos">
-        <a href="#"><img :src="fixvaletImg" alt="Fixvalet" /></a>
-        <img :src="fixparkingImg" alt="Fixparking" />
-        <img :src="prgparkingImg" alt="PRG Parking" />
-        <img :src="parkinghubImg" alt="ParkingHub" />
+        <a href="#"><img src="/fixvalet.webp" alt="Fixvalet" /></a>
+        <img src="/Fixparking.webp" alt="Fixparking" />
+        <img src="/prgparking.webp" alt="PRG Parking" />
+        <img src="/PARKINGHUB.webp" alt="ParkingHub" />
       </div>
     </section>
+
   </main>
 </template>
 
@@ -188,61 +174,13 @@ import { ref, onMounted } from 'vue'
 import ValetForm from '../components/ValetForm.vue'
 import PriceCalendar from '../components/PriceCalendar.vue'
 
-import reservationImg from '@/assets/reservation1.webp';
-import carImg from '@/assets/car1.webp';
-import busImg from '@/assets/bus1.webp';
-import markerImg from '@/assets/marker1.webp';
-import phoneImg from '@/assets/phone1.webp';
-import exitImg from '@/assets/exit1.webp';
-
-import fixvaletImg from '@/assets/fixvalet.webp';
-import fixparkingImg from '@/assets/Fixparking.webp';
-import prgparkingImg from '@/assets/prgparking.webp';
-import parkinghubImg from '@/assets/PARKINGHUB.webp';
-
-import img1 from '@/assets/img1.webp';
-import img2 from '@/assets/img2.webp';
-import img3 from '@/assets/img3.webp';
-import img4 from '@/assets/img4.webp';
-import img5 from '@/assets/img5.webp';
-import img6 from '@/assets/img6.webp';
-import img7 from '@/assets/img7.webp';
-import img8 from '@/assets/img8.webp';
-import img9 from '@/assets/img9.webp';
-import img10 from '@/assets/img10.webp';
-import img11 from '@/assets/img11.webp';
-import img12 from '@/assets/img12.webp';
-import img13 from '@/assets/img13.webp';
-import img14 from '@/assets/img14.webp';
-import img15 from '@/assets/img15.webp';
-
 /* ===== Gallery slider ===== */
 const currentIndex = ref(0)
-
-const galleryImages = [
-  { src: img1, alt: 'hostparking' },
-  { src: img2, alt: 'levné dlouhodobé parkování' },
-  { src: img3, alt: 'výhodné parkování letiště Praha' },
-  { src: img4, alt: 'non stop parkování letiště' },
-  { src: img5, alt: 'levné parkování letiště Praha' },
-  { src: img6, alt: 'parkoviště letiště Praha' },
-  { src: img7, alt: 'nejlevnější parkování letiště Praha' },
-  { src: img8, alt: 'parkování u letiště Praha' },
-  { src: img9, alt: 'letiště Václava Havla parking' },
-  { src: img10, alt: 'hostparking' },
-  { src: img11, alt: 'non stop parkování letiště' },
-  { src: img12, alt: 'letiště Václava Havla parking' },
-  { src: img13, alt: 'parkování letiště Praha' },
-  { src: img14, alt: 'nejlevnější parkování letiště' },
-  { src: img15, alt: 'parkování u letiště' },
-]
-
-const totalSlides = galleryImages.length
+const totalSlides = 17
 
 function nextSlide() {
   currentIndex.value = (currentIndex.value + 1) % totalSlides
 }
-
 function prevSlide() {
   currentIndex.value = (currentIndex.value - 1 + totalSlides) % totalSlides
 }
@@ -280,16 +218,19 @@ function loadVideo(index: number) {
   videos.value[index].loaded = true
 }
 
+
 /* ===== Blog slider ===== */
 const blogSlides = ref<HTMLElement | null>(null)
 
 onMounted(() => {
+  // подключение внешнего виджета (shapo)
   const script = document.createElement('script')
   script.id = 'shapo-embed-js'
   script.src = 'https://cdn.shapo.io/js/embed.js'
   script.defer = true
   document.body.appendChild(script)
 
+  // автопрокрутка блога
   let blogIndex = 0
   const cards = blogSlides.value?.querySelectorAll('.blog-card') ?? []
   const total = cards.length
@@ -325,7 +266,7 @@ onMounted(() => {
   align-items: center;
   min-height: 100vh;
   width: 100%;
-  background-image: url('@/assets/bg-airport.webp');
+  background-image: url('/bg-airport.webp');
   background-size: cover;
   background-position: center;
   text-align: center;
