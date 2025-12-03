@@ -158,7 +158,7 @@
     <section id="partners" class="partners">
       <h3>Naši partneři</h3>
       <div class="partner-logos">
-        <img src="/fixvalet.webp" alt="Fixvalet" />
+        <a href="#"><img src="/fixvalet.webp" alt="Fixvalet" /></a>
         <img src="/Fixparking.webp" alt="Fixparking" />
         <img src="/prgparking.webp" alt="PRG Parking" />
         <img src="/PARKINGHUB.webp" alt="ParkingHub" />
