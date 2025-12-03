@@ -1,81 +1,81 @@
 <template>
-    <div class="page">
-      <!-- Header -->
-      <header class="site-header">
-  <div class="header-container">
-    <!-- Logo -->
-    <div class="logo">
-      <RouterLink to="/" class="logo-link">
-        <span class="logo-primary">HOST</span><span class="logo-accent">PARKING</span>
-      </RouterLink>
-    </div>
+  <div class="page">
+    <!-- Header -->
+    <header class="site-header">
+      <div class="header-container">
+        <!-- Logo -->
+        <div class="logo">
+          <RouterLink to="/" class="logo-link">
+            <span class="logo-primary">HOST</span><span class="logo-accent">PARKING</span>
+          </RouterLink>
+        </div>
 
-    <!-- Desktop nav -->
-    <nav class="nav-desktop">
-      <a href="/info.html" class="nav-link">Jak to funguje</a>
-      <a href="#prices" class="nav-link">Ceník</a>
-      <a href="/info.html" class="nav-link">Užitečné informace</a>
-    </nav>
+        <!-- Desktop nav -->
+        <nav class="nav-desktop">
+          <a href="/info.html" class="nav-link">Jak to funguje</a>
+          <a href="#prices" class="nav-link">Ceník</a>
+          <a href="/info.html" class="nav-link">Užitečné informace</a>
+        </nav>
 
-    <!-- Mobile toggle -->
-    <div class="menu-toggle" @click="toggleMenu">☰</div>
+        <!-- Mobile toggle -->
+        <div class="menu-toggle" @click="toggleMenu">☰</div>
+      </div>
+
+      <!-- Mobile nav -->
+      <div v-if="mobileMenu" class="nav-mobile">
+        <a href="/jak-to-funguje.html" class="nav-link">Jak to funguje</a>
+        <a href="#prices" class="nav-link">Ceník</a>
+        <a href="/blog.html" class="nav-link">Blog</a>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main class="main">
+      <RouterView />
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <!-- Logo -->
+        <div class="footer-logo">
+          <a href="https://hostparking.cz" target="_blank" rel="noopener">
+            <!-- ИМПОРТИРУЕМ КАРТИНКУ -->
+            <img :src="footerLogo" alt="HostParking Logo" />
+          </a>
+        </div>
+
+        <!-- Contacts -->
+        <div class="footer-contacts">
+          <p><strong>Telefon:</strong> <a href="tel:+420704827317">+420 704 827 317</a></p>
+          <p><strong>Email:</strong> <a href="mailto:rezervace@hostparking.cz">rezervace@hostparking.cz</a></p>
+          <p><strong>Adresa:</strong> Hostivice, 253 01 HostParking</p>
+        </div>
+
+        <!-- Links -->
+        <div class="footer-links">
+          <p><a href="/oou.html">Ochrana osobních údajů</a></p>
+          <p><a href="/VOP.pdf" download>VOP</a></p>
+        </div>
+      </div>
+
+      <div class="footer-copy">
+        © 2024–2025 HostParking.cz – Všechna práva vyhrazena
+      </div>
+    </footer>
   </div>
+</template>
 
-  <!-- Mobile nav -->
-  <div v-if="mobileMenu" class="nav-mobile">
-    <a href="/jak-to-funguje.html" class="nav-link">Jak to funguje</a>
-    <a href="#prices" class="nav-link">Ceník</a>
-    <a href="/blog.html" class="nav-link">Blog</a>
-  </div>
-</header>
+<script setup lang="ts">
+import { ref } from 'vue'
+import { RouterView, RouterLink } from 'vue-router'
+import footerLogo from '@/assets/IMG-20241214-WA0008.webp'
 
-  
-      <!-- Main -->
-      <main class="main">
-        <RouterView />
-      </main>
-  
-      <!-- Footer -->
-      <footer class="site-footer">
-  <div class="footer-container">
-    <!-- Logo -->
-    <div class="footer-logo">
-      <a href="https://hostparking.cz" target="_blank" rel="noopener">
-        <img src="/IMG-20241214-WA0008.webp" alt="HostParking Logo" />
-      </a>
-    </div>
-
-    <!-- Contacts -->
-    <div class="footer-contacts">
-      <p><strong>Telefon:</strong> <a href="tel:+420704827317">+420 704 827 317</a></p>
-      <p><strong>Email:</strong> <a href="mailto:rezervace@hostparking.cz">rezervace@hostparking.cz</a></p>
-      <p><strong>Adresa:</strong> Hostivice, 253 01 HostParking</p>
-    </div>
-
-    <!-- Links -->
-    <div class="footer-links">
-      <p><a href="/oou.html">Ochrana osobních údajů</a></p>
-      <p><a href="/VOP.pdf" download>VOP</a></p>
-    </div>
-  </div>
-
-  <div class="footer-copy">
-    © 2024–2025 HostParking.cz – Všechna práva vyhrazena
-  </div>
-</footer>
-
-    </div>
-  </template>
-  
-  <script setup lang="ts">
-  import { ref } from 'vue'
-  import { RouterView, RouterLink } from 'vue-router'
-  
-  const mobileMenu = ref(false)
-  function toggleMenu() {
-    mobileMenu.value = !mobileMenu.value
-  }
-  </script>
+const mobileMenu = ref(false)
+function toggleMenu() {
+  mobileMenu.value = !mobileMenu.value
+}
+</script>
   
   <style>
   :root {

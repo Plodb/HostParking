@@ -3,6 +3,7 @@ import vue from '@vitejs/plugin-vue'
 import legacy from '@vitejs/plugin-legacy'
 import viteCompression from 'vite-plugin-compression'
 import viteImagemin from 'vite-plugin-imagemin'
+import { resolve } from 'path' // Добавь эту строку
 
 export default defineConfig({
   plugins: [
@@ -25,6 +26,11 @@ export default defineConfig({
       webp: { quality: 70 },
     }),
   ],
+  resolve: {
+    alias: {
+      '@': resolve(__dirname, 'src'), // ДОБАВЬ ЭТОТ БЛОК
+    }
+  },
   build: {
     target: 'esnext',
     sourcemap: false,

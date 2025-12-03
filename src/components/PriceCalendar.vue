@@ -177,9 +177,9 @@ onMounted(async () => {
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.5rem;
-
   max-width: 800px; /* ограничение ширины контейнера */
   margin: 0 auto;
+  margin-bottom: 2rem;
 }
 
 .month-buttons button {
