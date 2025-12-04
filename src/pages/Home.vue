@@ -4,7 +4,7 @@
     <section class="hero">
       <div class="hero-content">
         <h1 class="force-white heading header-shadow font-bold leading-snug hero-heading">
-          CBT
+          Levné parkování u letiště Václava Havla v Praze
         </h1>
         <p class="force-white subheading header-shadow font-bold hero-heading">
           Parkování u letiště Praha
