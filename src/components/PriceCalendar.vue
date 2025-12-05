@@ -18,7 +18,7 @@
         <thead>
           <tr>
             <th>Počet dní</th>
-            <th>Cena (s&nbsp;DPH)</th>
+            <th>Cena (vč.&nbsp;DPH)</th>
           </tr>
         </thead>
         <tbody>
