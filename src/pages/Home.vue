@@ -26,7 +26,7 @@
 
     <!-- Jak to funguje -->
     <section class="steps" id="steps">
-      <h3>Jak to funguje</h3>
+      <h2>Jak to funguje</h2>
       <div class="step-icons">
         <div class="step"><img src="/reservation1.webp" alt="Rezervace" /><p>Rezervace</p></div>
         <div class="step"><img src="/car1.webp" alt="Příjezd" /><p>Příjezd na parkovište</p></div>
@@ -87,33 +87,32 @@
     <div class="arrow right" @click="nextSlide">&#10095;</div>
   </div>
 </section>
+
 <section class="reviews-section" id="reviews">
   <div id="shapo-widget-cf9b24a6173a91eac73d"></div>
 </section>
-<p class="info-block">
-  Podívejte se na náš blog – najdete tam užitečné tipy a informace pro cestující.
-</p>
+
 <!-- BLOG -->
 <section class="blog-section" id="blog">
-  <h3>Užitečné tipy pro vaše cesty</h3>
+  <h2>Blog. Užitečné tipy pro vaše cesty a informace pro cestující</h2>
   <div class="blog-slider">
     <div class="blog-slides" ref="blogSlides">
       <div class="blog-card" v-for="(post, i) in posts" :key="i">
+        <a :href="post.href" class="blog-link">
         <div class="blog-content">
           <h4>{{ post.title }}</h4>
           <p>{{ post.desc }}</p>
-          <a :href="post.href" class="blog-link" target="_blank">Číst více</a>
         </div>
+        </a>
       </div>
     </div>
   </div>
 </section>
-<p class="info-block">
-    Poprvé u nás? Nemůžete nás najít? Mrkněte na video, které vás navede přímo k nám.
-  </p>
+
 <!-- VIDEO -->
 <section class="video-section" id="video">
-    <h3>Jak se k nám dostat – podívejte se na video</h3>
+    <h2>Jak se dostat na naše parkoviště</h2>
+    <h3>Mrkněte na video, které vás navede přímo k nám</h3>
     <div class="video-container">
       <div
         v-for="(video, i) in videos"
@@ -158,10 +157,10 @@
     <section id="partners" class="partners">
       <h3>Naši partneři</h3>
       <div class="partner-logos">
-        <a href="#"><img src="/fixvalet.webp" alt="Fixvalet" /></a>
-        <img src="/Fixparking.webp" alt="Fixparking" />
-        <img src="/prgparking.webp" alt="PRG Parking" />
-        <img src="/PARKINGHUB.webp" alt="ParkingHub" />
+        <a href="https://fixparking.cz/" target="_blank"><img src="/Fixparking.webp" alt="Fixparking"></a>
+        <a href="https://prgparking.cz/" target="_blank"><img src="/prgparking.webp" alt="PRG Parking"></a>
+        <a href="https://parkinghub.cz/" target="_blank"><img src="/PARKINGHUB.webp" alt="ParkingHub"></a>
+        <!--<a href="https://fixvalet.cz/" target="_blank"><img src="/fixvalet.webp" alt="Fixvalet"></a>-->
       </div>
     </section>
 
@@ -202,14 +201,12 @@ const posts = [
 const videos = ref([
   {
     id: 'Peo-2O-C6tk',
-    text: `<a href="https://hostparking.cz">HOSTPARKING</a><br>
-           Podívejte se na návod, jak se snadno dostat na naše parkoviště.`,
+    text: `Podívejte se na návod, jak se snadno dostat na naše parkoviště.`,
     loaded: false
   },
   {
     id: '9I-d9C0IFxM',
-    text: `<a href="https://hostparking.cz">HOSTPARKING</a><br>
-           Navštivte náš YouTube kanál a sledujte další užitečná videa.`,
+    text: `Navštivte náš YouTube kanál a sledujte další užitečná videa.`,
     loaded: false
   }
 ])
@@ -250,376 +247,4 @@ onMounted(() => {
   setInterval(nextBlogSlide, 10000)
 })
 </script>
-
-
-<style scoped>
-:root {
-  --primary: #6a0dad;
-  --accent: #ffcc00;
-}
-
-/* ================= HERO ================= */
-.hero {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  width: 100%;
-  background-image: url('/bg-airport.webp');
-  background-size: cover;
-  background-position: center;
-  text-align: center;
-  color: white;
-}
-.hero::after {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.5);
-  z-index: 0;
-}
-.hero-content {
-  position: relative;
-  z-index: 1;
-  padding: 1rem;
-  max-width: 1200px;
-}
-.force-white { color: white !important; }
-.heading {
-  font-size: clamp(1.466rem, 3.33vw, 2.333rem);
-}
-
-.subheading {
-  font-size: clamp(1.333rem, 2.66vw, 2rem);
-}
-
-.tagline {
-  font-size: clamp(0.933rem, 2vw, 1.466rem);
-}
-.header-shadow { text-shadow: 0 1px 3px rgba(0,0,0,.7); }
-
-/* ================= INFO BLOCK ================= */
-.info-block {
-  background: linear-gradient(145deg, #ffffff, #f3f0ff);
-  border: 2px solid var(--primary);
-  color: var(--primary);
-  padding: 1.5rem;
-  border-radius: 16px;
-  width: fit-content;
-  font-size: 1.1rem;
-  max-width: 95%;
-  margin: 3rem auto;
-  text-align: center;
-  box-shadow: 0 10px 30px rgba(106, 13, 173, 0.1);
-}
-
-/* ================= TEXT SECTION ================= */
-.text-section { background: white; padding: 3rem 1rem; }
-.text-box {
-  border: 3px solid var(--primary);
-  color: var(--primary);
-  text-align: center;
-  padding: 2rem;
-  border-radius: 1rem;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-/* ================= STEPS ================= */
-.steps {
-  background: white;
-  padding: 4rem 1rem;
-  text-align: center;
-}
-.steps h3 {
-  color: var(--primary);
-  font-size: 2rem;
-  margin-bottom: 2rem;
-}
-.step-icons { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; }
-.step { flex: 0 1 120px; text-align: center; }
-.step img { max-width: 80px; margin: 0 auto 0.5rem; }
-.step p { color: var(--primary); font-weight: bold; }
-.steps-link a {
-  display: inline-block;
-  margin-top: 2rem;
-  padding: 1rem 2rem;
-  background: var(--accent);
-  color: var(--primary);
-  font-weight: bold;
-  border-radius: 8px;
-  text-decoration: none;
-}
-
-/* ================= BLOCK PRICE ================= */
-.block-price {
-  position: relative;
-  padding: 4rem 2rem;
-  text-align: center;
-  background-image: url('/block-price.webp');
-  background-size: cover;
-  background-position: center;
-}
-.block-price-box {
-  background: rgba(255,255,255,0.9);
-  border: 3px solid var(--primary);
-  border-radius: 1rem;
-  padding: 2rem;
-  max-width: 900px;
-  margin: 0 auto;
-  color: var(--primary);
-}
-
-/* ================= PRICES ================= */
-.prices {
-  background: white;
-  padding: 4rem 2rem;
-  text-align: center;
-}
-.price-table {
-  max-width: 600px;
-  margin: 0 auto;
-  border-collapse: collapse;
-  width: 100%;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  border-radius: 12px;
-  overflow: hidden;
-}
-.price-table th,
-.price-table td {
-  padding: 1rem;
-  border-bottom: 1px solid #eee;
-}
-.price-table th {
-  background: var(--accent);
-  color: #000;
-}
-
-/* ================= GALLERY ================= */
-.gallery {
-  position: relative;
-  padding: 4rem 2rem;
-  text-align: center;
-  background-image: url('/gallery-back.webp');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  overflow: hidden;
-}
-.gallery::after {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: hsla(298, 26%, 48%, 0.1);
-  backdrop-filter: blur(3px);
-  z-index: 0;
-}
-.gallery h3 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  position: relative;
-  z-index: 1;
-}
-.slider {
-  background-color: rgba(255, 255, 255, 0.85);
-  padding: 2rem;
-  border-radius: 16px;
-  max-width: 1300px;
-  margin: 0 auto;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-}
-.slides { display: flex; transition: transform 0.6s ease-in-out; will-change: transform; }
-.slide { flex-shrink: 0; width: 100%; padding: 1rem; }
-.slide img {
-  width: 100%;
-  max-width: 900px;
-  margin: auto;
-  display: block;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  object-fit: cover;
-}
-.arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 2.5rem;
-  color: white;
-  background: rgba(0,0,0,0.5);
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  z-index: 10;
-  border-radius: 8px;
-  user-select: none;
-}
-.arrow.left { left: 10px; }
-.arrow.right { right: 10px; }
-
-/* ================= BLOG ================= */
-.blog-section {
-  background: white;
-  padding: 4rem 2rem;
-  text-align: center;
-}
-.blog-section h3 {
-  font-size: 2rem;
-  color: var(--primary);
-  margin-bottom: 2rem;
-}
-.blog-slider {
-  overflow: hidden;
-  max-width: 1000px;
-  margin: 0 auto;
-  position: relative;
-}
-.blog-slides { display: flex; transition: transform 0.6s ease-in-out; }
-.blog-card {
-  background: #f9f9ff;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-  flex-shrink: 0;
-  width: 100%;
-  max-width: 300px;
-  margin: 0 1rem;
-  overflow: hidden;
-  transition: transform 0.3s ease;
-}
-.blog-content { padding: 1rem; text-align: left; }
-.blog-content h4 {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
-  color: var(--primary);
-}
-.blog-content p {
-  font-size: 0.95rem;
-  margin-bottom: 0.5rem;
-  color: #555;
-}
-.blog-link {
-  color: var(--accent);
-  text-decoration: none;
-  font-weight: bold;
-}
-.blog-link:hover { text-decoration: underline; }
-
-/* ================= VIDEO ================= */
-.video-section {
-  background: linear-gradient(to bottom, #f5f5ff 0%, #ffffff 100%);
-  padding: 4rem 2rem;
-  text-align: center;
-}
-.video-section h3 {
-  font-size: 2rem;
-  color: var(--primary);
-  margin-bottom: 2rem;
-}
-.video-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-}
-.video-box {
-  flex: 1 1 400px;
-  max-width: 480px;
-  background: #f5f5ff;
-  border-radius: 12px;
-  padding: 1rem;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
-}
-.video-box:hover {
-  box-shadow: 0 10px 30px rgba(106, 13, 173, 0.3);
-  transform: scale(1.02);
-}
-.video-box iframe {
-  width: 100%;
-  height: 270px;
-  border-radius: 8px;
-}
-.video-box p {
-  margin-top: 1rem;
-  color: #444;
-  font-size: 1rem;
-}
-
-/* ================= MAP ================= */
-.map {
-  padding: 2rem;
-  text-align: center;
-}
-.map iframe {
-  width: 100%;
-  max-width: 1000px;
-  height: 400px;
-  border: none;
-  border-radius: 8px;
-}
-
-/* ================= PARTNERS ================= */
-.partners {
-  background: var(--primary);
-  color: white;
-  padding: 4rem 2rem;
-  text-align: center;
-}
-.partners h3 {
-  color: var(--accent);
-  margin-bottom: 2rem;
-}
-.partner-logos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-}
-.partner-logos img { max-height: 70px; }
-.video-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-}
-.video-box {
-  flex: 1 1 400px;
-  max-width: 480px;
-}
-.yt-lazy {
-  position: relative;
-  cursor: pointer;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-}
-.yt-lazy img {
-  width: 100%;
-  display: block;
-}
-.yt-play {
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%,-50%);
-  font-size: 3rem;
-  border: none;
-  background: rgba(0,0,0,0.6);
-  color: #fff;
-  border-radius: 50%;
-  width: 64px; height: 64px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-.yt-play:hover { background: rgba(0,0,0,0.8); }
-
-.yt-frame iframe {
-  width: 100%;
-  height: 270px;
-  border-radius: 12px;
-}
-</style>
 

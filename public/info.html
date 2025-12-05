@@ -1,296 +1,16 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Levné parkování u letiště Václava Havla v Praze. Jak funguje HostParking – Jednoduchý návod pro zákazníky. Rezervujte online na HostParking.cz.">
-  <meta name="keywords" content="HostParking, fixparking, prgparking, parkinghub, levné dlouhodobé parkování, výhodné parkování letiště Praha, non stop parkování letiště,  levné parkování letiště Praha, parkoviště letiště Praha, nejlevnější parkování letiště Praha, parkování u letiště Praha, parkování letiště Praha, Levné parkování u letiště Václava Havla, parkování u letiště Praha, levné parkování letiště Praha, levné parkování Praha letiště, letiště Václava Havla parking, transfer na letiště Praha, parkoviště u letiště Praha, dlouhodobé parkování Praha, rezervace parkování online">
-  <title>HostParking | Parkování u letiště Praha</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" href="apple-icon.webp">
-  <link rel="canonical" href="https://hostparking.cz" />
-  <style>
-    :root {
-      --primary: #6a0dad;
-      --accent: #ffcc00;
-      --text: #1a1a1a;
-      --bg: #f5f5ff;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-    }
-
-    header {
-      background-color: white;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    header h1 {
-      font-size: 1.5rem;
-      color: var(--primary);
-    }
-
-    nav a {
-      margin-left: 1.5rem;
-      text-decoration: none;
-      color: var(--text);
-      font-weight: 500;
-    }
-
-    .header-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-      width: 100%;
-    }
-
-    .hero {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-
-      height: 100vh;
-      min-height: 600px;
-      width: 100%;
-
-      background-image: url('./climate_service.webp');
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-attachment: scroll;
-      background-color: #000;
-
-      position: relative;
-      text-align: center;
-      padding: 2rem;
-      overflow: hidden;
-      color: white;
-      text-shadow: 0 2px 5px rgba(0,0,0,0.4);
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.5);
-      z-index: 0;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 1200px;
-      width: 100%;
-      padding: 1rem;
-    }
-
-    .hero h1 {
-      font-size: clamp(2.2rem, 5vw, 3.5rem);
-      margin-bottom: 1rem;
-      line-height: 1.2;
-    }
-
-    .hero p {
-      font-size: clamp(1.1rem, 2vw, 1.6rem);
-      margin-bottom: 2rem;
-    }
-
-    .hero h2 {
-      font-size: clamp(1.8rem, 4vw, 3rem);
-      margin-bottom: 1rem;
-    }
-
-    .hero p {
-      font-size: clamp(1rem, 2vw, 1.4rem);
-    }
-
-    @media (min-width: 768px) {
-      .hero-content { max-width: 700px; }
-    }
-
-    .hero h2 { font-size: 2.5rem; margin-bottom: 1rem; }
-    .hero p { font-size: 1.2rem; }
-
-
-
-    @keyframes fadeUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .menu-toggle {
-        display: none;
-        font-size: 2rem;
-        cursor: pointer;
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        background: white;
-        padding: 1rem;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        z-index: 999;
-    }
-
-    nav a {
-        margin: 0.5rem 0;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    nav.active {
-         display: flex;
-        }
-    }
-
-
-    .hero-button {
-      margin-top: 2rem;
-      display: inline-block;
-      padding: 0.9rem 2rem;
-      background-color: var(--accent);
-      color: var(--primary);
-      font-weight: bold;
-      font-size: 1.1rem;
-      text-decoration: none;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      transition: background 0.3s, transform 0.2s;
-    }
-
-    .hero-button:hover {
-      background-color: #ffd633;
-      transform: scale(1.05);
-    }
-
-
-    .steps-wrapper {
-        max-width: 1000px;
-        margin: 4rem auto;
-        padding: 0 1rem;
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-    }
-
-    .info-block {
-        background: #ffffff;
-        border-left: 6px solid var(--primary);
-        padding: 1.5rem 2rem;
-        border-radius: 16px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
-        opacity: 0;
-        transform: translateY(40px);
-        transition: all 0.6s ease;
-    }
-
-    .info-block.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    .info-block h3 {
-        font-size: 1.4rem;
-        color: var(--primary);
-        margin-bottom: 0.5rem;
-    }
-
-    .info-block p,
-    .info-block ul {
-        font-size: 1rem;
-        line-height: 1.6;
-    }
-
-    .info-block ul {
-        padding-left: 1.2rem;
-        margin-top: 0.5rem;
-    }
-
-    .info-block ul li::marker {
-        color: var(--accent);
-    }
-
-    @media (max-width: 600px) {
-    .info-block {
-        padding: 1.2rem 1.2rem;
-    }
-
-    .info-block h3 {
-        font-size: 1.2rem;
-    }
-    }
-
-    .partner-slider {
-      overflow: hidden;
-      max-width: 1200px;
-      margin: 0 auto;
-      position: relative;
-    }
-
-    .partner-track {
-      display: flex;
-      transition: transform 0.6s ease-in-out;
-      will-change: transform;
-    }
-
-    .partner {
-      flex: 0 0 25%; 
-      padding: 1rem;
-      text-align: center;
-      text-decoration: none;
-      color: white;
-    }
-
-    .partner img {
-      max-height: 70px;
-      margin-bottom: 0.5rem;
-    }
-
-    .partner p {
-      margin-top: 0.5rem;
-      font-size: 0.95rem;
-    }
-
-
-    footer {
-      background: #1a1a1a;
-      color: white;
-      padding: 2rem;
-      text-align: center;
-      font-size: 0.9rem;
-    }
-  </style>
-
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Levné parkování u letiště Václava Havla v Praze. Jak funguje HostParking – Jednoduchý návod pro zákazníky. Rezervujte online na HostParking.cz.">
+<meta name="keywords" content="HostParking, fixparking, prgparking, parkinghub, levné dlouhodobé parkování, výhodné parkování letiště Praha, non stop parkování letiště,  levné parkování letiště Praha, parkoviště letiště Praha, nejlevnější parkování letiště Praha, parkování u letiště Praha, parkování letiště Praha, Levné parkování u letiště Václava Havla, parkování u letiště Praha, levné parkování letiště Praha, levné parkování Praha letiště, letiště Václava Havla parking, transfer na letiště Praha, parkoviště u letiště Praha, dlouhodobé parkování Praha, rezervace parkování online">
+<title>HostParking | Parkování u letiště Praha</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="apple-icon.webp">
+<link rel="canonical" href="https://hostparking.cz/info.php" />
+<link rel="stylesheet" href="styles.css" type="text/css">
 
 <script type="application/ld+json">
   {
@@ -372,25 +92,29 @@ background:white; padding:2rem; border-radius:12px; box-shadow:0 10px 30px rgba(
 
 <body>
 
+<div id="app">
+<div class="page">
 
- <header>
+ <header class="site-header">
     <div class="header-container">
-        <h1>
-          <a href="https://hostparking.cz" style="text-decoration: none; color: inherit;">
-            HOST<span style="color:var(--accent);">PARKING</span>
-          </a>
-        </h1>
-            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-        <nav id="menu">
-        <a href="#blog">Užitečné informace</a>
-        <a href="#steps">Jak to funguje</a>
-        <a href="#prices">Ceník</a>
-        <a href="#contact">Kontakt</a>
+        <div class="logo">
+          <a href="/" class="logo-link"><span class="logo-primary">HOST</span><span class="logo-accent">PARKING</span></a>
+        </div>
+
+        <!-- Desktop nav -->
+        <nav class="nav-desktop">
+          <a href="/" class="nav-link">Úvod</a>
+          <a href="/info.html" class="nav-link">Jak to funguje</a>
+          <a href="/#prices" class="nav-link">Ceník</a>
+          <a href="/info.html" class="nav-link">Užitečné informace</a>
         </nav>
+
+        <!-- Mobile toggle -->
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     </div>
   </header>
 
-  <section class="hero">
+  <section class="hero page_info">
     <div class="hero-content">
       <h1>Levné parkování u letiště Václava Havla v Praze</h1>
       <p>Jak funguje HostParking – Jednoduchý návod pro zákazníky</p>
@@ -423,7 +147,7 @@ background:white; padding:2rem; border-radius:12px; box-shadow:0 10px 30px rgba(
       <h3>2. Co následuje po potvrzení?</h3>
       <p>
         Přijde vám e-mail s přesnou adresou a instrukcemi.<br>
-        Adresa: <a href="https://www.google.com/maps/place/HostParking/@50.0786894,14.2811581,17z/data=!3m1!4b1!4m6!3m5!1s0x470bbf3b6e0dec05:0xb76f3349588327d1!8m2!3d50.0786894!4d14.283733!16s%2Fg%2F11wp9bcn06?entry=ttu&g_ep=EgoyMDI1MDMyMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" style="color: var(--primary); font-weight: bold; text-decoration: underline;">HOSTPARKING</a>, 253 01 Hostivice, ( https://maps.app.goo.gl/6fiJhbezFYSdjQ7f6 ).
+        Adresa: <a href="https://www.google.com/maps/place/HostParking/@50.0786894,14.2811581,17z/data=!3m1!4b1!4m6!3m5!1s0x470bbf3b6e0dec05:0xb76f3349588327d1!8m2!3d50.0786894!4d14.283733!16s%2Fg%2F11wp9bcn06?entry=ttu&g_ep=EgoyMDI1MDMyMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" style="font-weight: bold; text-decoration: underline;">HOSTPARKING</a>, 253 01 Hostivice, (https://maps.app.goo.gl/6fiJhbezFYSdjQ7f6).
       </p>
     </div>
   
@@ -433,7 +157,7 @@ background:white; padding:2rem; border-radius:12px; box-shadow:0 10px 30px rgba(
         1. Přijeďte ideálně přesně na čas uvedený ve vaší rezervaci, nejméně však 3 hodiny před odletem. Pomůže nám to vše dobře zorganizovat a vyhnout se zbytečnému čekání.<br>
         2. Po příjezdu na místo uveďte své jméno, na které byla provedena rezervace. Pokud nikoho neuvidíte, zavolejte prosím na telefonní číslo uvedené v potvrzovacím e-mailu.<br>
         3. Po zaplacení služby vám náš pracovník ukáže, kde zaparkovat.<br>
-        4.  Pomůžeme vám s vašimi zavazadly a zavezeme vás na naše sběrné místo, které se nachází přibližně 2 minuty chůze od Terminálu 1 Letiště Václava Havla, přímo naproti. Toto místo zároveň slouží jako místo setkání při vašem návratu.
+        4.  Pomůžeme vám s vašimi zavazadly a zavezeme vás na naše sběrné místo, které se nachází přibližně 2 minuty chůze od Terminálu 1 Letiště Václava Havla, přímo naproti. Toto místo zároveň slouží jako místo setkání při vašem návratu.
       </p>
     </div>
   
@@ -451,7 +175,7 @@ background:white; padding:2rem; border-radius:12px; box-shadow:0 10px 30px rgba(
       <ul>
         <li>✅ Platba probíhá na místě při příjezdu – v hotovosti nebo kartou (dle dostupnosti platebního terminálu).</li>
         <li>✅ Na vyžádání vám rádi vystavíme daňový doklad – stačí nám to napsat při rezervaci nebo při příjezdu.</li>
-        <li>✅ Přijímáme osobní vozy do 3,5 t, délky 5 m a výšky 2,2 m. Za delší vozidla se účtuje příplatek ve výši 50 % z ceny parkování, dodávky pouze po předchozí dohodě.</li>
+        <li>✅ Přijímáme osobní vozy do 3,5t, délky 5m a výšky 2,2m. Za delší vozidla se účtuje příplatek ve výši 50% z ceny parkování, dodávky pouze po předchozí dohodě.</li>
         <li>✅ Fungujeme nonstop – přijet můžete i v noci nebo brzy ráno.</li>
         <li>✅ Maximální doba parkování je 90 dní. V případě potřeby delšího pobytu nás prosím kontaktujte.</li>
         <li>✅ V našich vozech jsou k dispozici dětské autosedačky. Požádejte o ně prosím předem.</li>
@@ -536,7 +260,7 @@ background:white; padding:2rem; border-radius:12px; box-shadow:0 10px 30px rgba(
   </section>
   
 
-
+<!--
   <footer>
     <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 2rem;">
       
@@ -562,7 +286,38 @@ background:white; padding:2rem; border-radius:12px; box-shadow:0 10px 30px rgba(
       Copyright © 2024 HostParking.cz – Všechna práva vyhrazena
     </div>
   </footer>
+-->
 
+      <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <!-- Logo -->
+        <div class="footer-logo">
+          <a href="/" rel="noopener">
+            <img src="/logoHphead.webp" alt="HostParking" />
+          </a>
+        </div>
+
+        <!-- Contacts -->
+        <div class="footer-contacts text-left">
+          <p>Telefon: <a href="tel:+420704827317">+420&nbsp;704&nbsp;827&nbsp;317</a></p>
+          <p>E-mail: <a href="mailto:rezervace@hostparking.cz">rezervace@hostparking.cz</a></p>
+          <p>Adresa: <a href="https://maps.app.goo.gl/Utjs1CB6jTfcMFRT9" target="_blank">Hostivice, 253 01 HostParking</a></p>
+        </div>
+
+        <!-- Links -->
+        <div class="footer-links text-left">
+          <p><a href="/oou.html">Ochrana osobních údajů</a></p>
+          <p><a href="/VOP.pdf" download>VOP</a></p>
+        </div>
+      </div>
+
+      <div class="footer-copy">
+        © 2024–2025 <a href="/">HostParking.cz</a>
+      </div>
+    </footer>
+</div>
+</div>
 
 
 

@@ -1,6 +1,6 @@
 <template>
   <section class="prices" id="prices">
-    <h3>Ceník parkování</h3>
+    <h2>Ceník parkování</h2>
 
     <div class="month-buttons">
       <button
@@ -18,7 +18,7 @@
         <thead>
           <tr>
             <th>Počet dní</th>
-            <th>Cena</th>
+            <th>Cena (s&nbsp;DPH)</th>
           </tr>
         </thead>
         <tbody>
@@ -29,8 +29,7 @@
         </tbody>
       </table>
     </div>
-
-    <p class="price-note">Ceny v době rezervace a   včetně DPH </p>
+    
   </section>
 </template>
 
@@ -105,117 +104,3 @@ onMounted(async () => {
   }
 })
 </script>
-  
-  <style scoped>
-  .prices {
-    background: linear-gradient(145deg, #ffffff, #faf7ff);
-    padding: 4rem 2rem;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .prices h3 {
-    font-size: 2.2rem;
-    margin-bottom: 2rem;
-    color: var(--primary);
-    font-weight: 800;
-    letter-spacing: -0.5px;
-    text-transform: uppercase;
-  }
-  
-  .table-container {
-    width: 100%;
-    max-width: 650px;
-    max-height: 400px; /* ограничение по высоте */
-    overflow-y: auto;  /* скролл */
-    border-radius: 14px;
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
-    background: #fff;
-    margin-bottom: 1.5rem;
-  }
-  
-  .price-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 1rem;
-  }
-  
-  .price-table th,
-  .price-table td {
-    padding: 1rem 1.2rem;
-    border-bottom: 1px solid #eee;
-    text-align: center;
-  }
-  
-  .price-table th {
-    background: var(--primary);
-    color: #fff;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-  
-  .price-table td {
-    color: #333;
-    font-weight: 500;
-  }
-  
-  .price-table tr:nth-child(even) td {
-    background: #fafafa;
-  }
-  
-  .price-table tr:hover td {
-    background: #f3f0ff;
-    color: var(--primary);
-    transition: background 0.25s ease, color 0.25s ease;
-  }
-  
-  .month-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.5rem;
-  max-width: 800px; /* ограничение ширины контейнера */
-  margin: 0 auto;
-  margin-bottom: 2rem;
-}
-
-.month-buttons button {
-  flex: 1 1 120px;   /* кнопки минимум 120px */
-  max-width: 160px;  /* максимум, чтобы не растягивались */
-  margin: 0.2rem;
-  padding: 0.6rem 1.2rem;
-  border: 2px solid var(--primary);
-  border-radius: 8px;
-  background: #fff;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  font-weight: 600;
-  font-size: 0.9rem;
-  box-shadow: 0 3px 8px rgba(106, 13, 173, 0.15);
-}
-  .month-buttons button:hover {
-    background: var(--primary);
-    color: #fff;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(106, 13, 173, 0.3);
-  }
-  
-  .month-buttons .highlighted {
-    background: var(--accent);
-    color: #000;
-    font-weight: bold;
-    border-color: var(--accent);
-    box-shadow: 0 6px 14px rgba(255, 204, 0, 0.35);
-  }
-  
-  .price-note {
-    text-align: center;
-    font-size: 0.85rem;
-    margin-top: 1.5rem;
-    color: #777;
-  }
-  </style>
-  
