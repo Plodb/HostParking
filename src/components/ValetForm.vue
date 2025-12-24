@@ -230,7 +230,7 @@ const minDate = todayISO(0)
 const maxDate = todayISO(360)
 
 const extras = [ 
-  { id: 'key_storage_fixdent', price: 0, labelShort: 'Uložení klíčů v trezoru', desc: 'ZDARMA při zájmu o opravu promáčkliny. Více na <a href="https://fixdent.autos" target="_blank" rel="noopener">fixdent.autos</a>' },
+{ id: 'key_storage_fixdent', price: 0, labelShort: 'Uložení klíčů v trezoru', desc: 'ZDARMA při zájmu o opravu promáčkliny. Více na fixdent.autos' },
   { id: 'key_storage', price: 150, labelShort: 'Uložení autoklíčů v trezoru', desc: 'ZDARMA při čištění' },
   { id: 'interior_cleaning', price: 1200, labelShort: 'Balík 1200 Standard', desc: 'Vysátí a vlhké čištění interiéru' },
   { id: 'leather_seats', price: 1500, labelShort: 'Ruční čištění kožených sedadel', desc: 'Cena za 5 sedadel' },
