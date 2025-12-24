@@ -230,6 +230,7 @@ const minDate = todayISO(0)
 const maxDate = todayISO(360)
 
 const extras = [ 
+  { id: 'key_storage_free', price: 0, labelShort: 'Uložení klíčů v trezoru', desc: 'ZDARMA při zájmu o opravu promáčkliny. Více na <a href="https://fixdent.autos" target="_blank" rel="noopener">fixdent.autos</a>' },
   { id: 'key_storage', price: 150, labelShort: 'Uložení autoklíčů v trezoru', desc: 'ZDARMA při čištění' },
   { id: 'interior_cleaning', price: 1200, labelShort: 'Balík 1200 Standard', desc: 'Vysátí a vlhké čištění interiéru' },
   { id: 'leather_seats', price: 1500, labelShort: 'Ruční čištění kožených sedadel', desc: 'Cena za 5 sedadel' },
@@ -248,7 +249,6 @@ const extrasTotal = computed(() => serverPrice.value?.additionalServicesPrice ??
 const totalPrice = computed(() => serverPrice.value?.totalPrice ?? 0)
 const days = computed(() => serverPrice.value?.days ?? 1)
 
-// ====== Цены из CSV ======
 const prices = ref<number[][]>([]) // [month][days]
 
 async function loadPricesFromCSV() {
@@ -320,7 +320,6 @@ flatpickr("#departureDate", {
   })
 })
 
-// ====== Подсчёт цены на фронте ======
 async function calculateServerPrice() {
   if (!arrivalDate.value || !departureDate.value) return
 
