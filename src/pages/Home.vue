@@ -18,11 +18,67 @@
       </div>
     </section>
 
-    <section style="padding-top: 21rem;" class="text-section">
-      <div class="text-box">
-        <p>Sleva pri platbe hotove </p>
+    <!-- Oprava promáčklin -->
+<section class="dent-repair" id="dent-repair">
+  <div class="dent-box">
+    <h3>Oprava promáčklin během parkování</h3>
+    <p class="dent-subtitle">Doplňková služba pro klienty HostParking</p>
+
+    <p>
+      Máte na autě drobnou promáčklinu a nechcete kvůli ní jezdit do servisu?
+      Během parkování u <strong>HostParking</strong> vám můžeme zajistit
+      šetrnou opravu promáčklin bez lakování (<strong>PDR</strong>).
+    </p>
+
+    <p>
+      Oprava probíhá během vaší nepřítomnosti – po návratu z cesty si
+      vyzvednete vůz již opravený, bez nutnosti další návštěvy servisu.
+    </p>
+
+    <!-- First before/after pair -->
+    <div class="comparison-row">
+      <div class="comparison-col">
+        <div class="comparison-image">
+          <img src="/do1.webp" alt="Vůz před opravou" loading="lazy" />
+          <div class="comparison-label">Před opravou</div>
+        </div>
       </div>
-    </section>
+      
+      <div class="comparison-col">
+        <div class="comparison-image">
+          <img src="/po1.webp" alt="Vůz po opravě" loading="lazy" />
+          <div class="comparison-label">Po opravě</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Second before/after pair -->
+    <div class="comparison-row">
+      <div class="comparison-col">
+        <div class="comparison-image">
+          <img src="/pdr3.webp" alt="Promáčklina před opravou" loading="lazy" />
+          <div class="comparison-label">Před opravou</div>
+        </div>
+      </div>
+      
+      <div class="comparison-col">
+        <div class="comparison-image">
+          <img src="/pdr4.webp" alt="Promáčklina po opravě" loading="lazy" />
+          <div class="comparison-label">Po opravě</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="dent-note">
+      Tuto doplňkovou službu pro nás zajišťuje ověřený partnerský specialista
+      <strong>FixDent.autos</strong>.
+    </p>
+
+    <a href="https://fixdent.autos" target="_blank" class="dent-link">
+      Více informací o opravě promáčklin
+    </a>
+  </div>
+</section>
 
     <!-- Jak to funguje -->
     <section class="steps" id="steps">
