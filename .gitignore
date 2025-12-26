@@ -94,3 +94,5 @@ build/Release
 
 # Vite build cache
 .vite/
+
+main.js
