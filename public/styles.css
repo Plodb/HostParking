@@ -1383,6 +1383,7 @@ header {
 
   .menu-toggle {
     display: block;
+    margin-right: 50px;
   }
 
   nav.active {
